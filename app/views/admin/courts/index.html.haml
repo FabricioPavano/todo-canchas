@@ -6,13 +6,13 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:sport_id)
-      %th=t '.actions', :default => t("helpers.actions")
+      %th= :created_at
 
   %tbody
     - @courts.each do |court|
       %tr
         %td= link_to court.id, admin_club_court_path(id: court.id, club_id: court.club.id)
-        %td= court.sport_id
+        %td= court.sport.name
         %td=l court.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_club_court_path(id: court.id, club_id: court.club.id), :class => 'btn btn-mini'

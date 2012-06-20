@@ -1,4 +1,4 @@
-class Admin::CourtsController < ApplicationController
+class CourtsController < ApplicationController
   def index
     @club = Club.find(params[:club_id])
     @courts = @club.courts
@@ -32,8 +32,7 @@ class Admin::CourtsController < ApplicationController
 
   # GET /clubs/1/edit
   def edit
-     @club =  Club.find(params[:club_id])
-     @court = @club.courts.find(params[:id])	
+     @court = Club.find(params[:club_id]).find(:id)	
   end
 
   # POST /clubs
@@ -44,7 +43,7 @@ class Admin::CourtsController < ApplicationController
 
     respond_to do |format|
       if @court.save
-        format.html { redirect_to [:admin, @club, @court], notice: 'Club was successfully created.' }
+        format.html { redirect_to [@club, @court], notice: 'Club was successfully created.' }
         format.json { render json: [@club, @court], status: :created, location: [@club, @court] }
       else
         format.html { render action: "new" }
@@ -56,12 +55,11 @@ class Admin::CourtsController < ApplicationController
   # PUT /clubs/1
   # PUT /clubs/1.json
   def update
-    @club = Club.find(params[:club_id])
-    @court = @club.courts.new(params[:court])
+    @club = Club.find(params[:id])
 
     respond_to do |format|
       if @club.update_attributes(params[:club])
-        format.html { redirect_to [:admin, @club, @court], notice: 'Club was successfully updated.' }
+        format.html { redirect_to @club, notice: 'Club was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,12 +71,11 @@ class Admin::CourtsController < ApplicationController
   # DELETE /clubs/1
   # DELETE /clubs/1.json
   def destroy
-    @club = Club.find(params[:club_id])
-    @court = @club.courts.find(params[:id])
-    @court.destroy
+    @club = Club.find(params[:id])
+    @club.destroy
 
     respond_to do |format|
-      format.html {redirect_to [:admin, @club, @court] }
+      format.html { redirect_to clubs_url }
       format.json { head :no_content }
     end
   end
