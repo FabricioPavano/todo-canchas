@@ -1,11 +1,12 @@
 Todocanchas::Application.routes.draw do
- 
-  resources :clubs do
-    resources :courts
+
+  namespace :admin do
+    resources :clubs do
+      resources :courts
+    end
   end
 
-  root :to => 'clubs#index'
-   
+  root :to => 'admin/clubs#index'
 
 
   # The priority is based upon order of creation:

@@ -1,4 +1,4 @@
-class CourtsController < ApplicationController
+class Admin::CourtsController < ApplicationController
   def index
     @club = Club.find(params[:club_id])
     @courts = @club.courts
@@ -43,7 +43,7 @@ class CourtsController < ApplicationController
 
     respond_to do |format|
       if @court.save
-        format.html { redirect_to [@club, @court], notice: 'Club was successfully created.' }
+        format.html { redirect_to [:admin, @club, @court], notice: 'Club was successfully created.' }
         format.json { render json: [@club, @court], status: :created, location: [@club, @court] }
       else
         format.html { render action: "new" }
@@ -59,7 +59,7 @@ class CourtsController < ApplicationController
 
     respond_to do |format|
       if @club.update_attributes(params[:club])
-        format.html { redirect_to @club, notice: 'Club was successfully updated.' }
+        format.html { redirect_to [:admin, @club], notice: 'Club was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -75,7 +75,7 @@ class CourtsController < ApplicationController
     @club.destroy
 
     respond_to do |format|
-      format.html { redirect_to clubs_url }
+      format.html { redirect_to admin_clubs_url }
       format.json { head :no_content }
     end
   end

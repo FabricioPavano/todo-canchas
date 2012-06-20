@@ -1,4 +1,4 @@
-class ClubsController < ApplicationController
+class Admin::ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
@@ -44,7 +44,7 @@ class ClubsController < ApplicationController
 
     respond_to do |format|
       if @club.save
-        format.html { redirect_to @club, notice: 'Club was successfully created.' }
+        format.html { redirect_to [:admin, @club], notice: 'Club was successfully created.' }
         format.json { render json: @club, status: :created, location: @club }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ClubsController < ApplicationController
 
     respond_to do |format|
       if @club.update_attributes(params[:club])
-        format.html { redirect_to @club, notice: 'Club was successfully updated.' }
+        format.html { redirect_to [:admin, @club], notice: 'Club was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class ClubsController < ApplicationController
     @club.destroy
 
     respond_to do |format|
-      format.html { redirect_to clubs_url }
+      format.html { redirect_to admin_clubs_url }
       format.json { head :no_content }
     end
   end
