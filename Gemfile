@@ -8,7 +8,7 @@ gem 'rails', '3.2.6'
 gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
-gem "bootstrap-sass-rails"
+gem 'haml-rails'
 gem 'simple_form'
 
 # Gems used only for assets and not required
@@ -19,6 +19,8 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
+  gem "bootstrap-sass-rails"
+  gem 'twitter-bootstrap-rails'
 
   gem 'uglifier', '>= 1.0.3'
 end
