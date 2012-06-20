@@ -24,3 +24,8 @@ Department.create name: "Santa Rosa"
 Department.create name: "Tupungato"
 
 
+Sport.create name:'Futbol'
+Sport.create name:'Tenis'
+Sport.create name:'Paddle'
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620154822) do
+ActiveRecord::Schema.define(:version => 20120620181336) do
 
   create_table "clubs", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,23 @@ ActiveRecord::Schema.define(:version => 20120620154822) do
 
   add_index "clubs", ["department_id"], :name => "index_clubs_on_department_id"
 
+  create_table "courts", :force => true do |t|
+    t.integer  "sport_id"
+    t.integer  "club_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "courts", ["club_id"], :name => "index_courts_on_club_id"
+  add_index "courts", ["sport_id"], :name => "index_courts_on_sport_id"
+
   create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sports", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

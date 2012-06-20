@@ -1,5 +1,12 @@
 Todocanchas::Application.routes.draw do
-  resources :clubs
+ 
+  resources :clubs do
+    resources :courts
+  end
+
+  root :to => 'clubs#index'
+   
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
