@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
@@ -10,6 +11,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +33,8 @@ group :test do
 end
 
 group :development do
-
+  #solo para el rodri :)
+  gem 'sqlite3' if File.open('config/database.yml').read.include? "sqlite3"
 end
 
 # To use ActiveModel has_secure_password
