@@ -3,5 +3,5 @@ class Court < ActiveRecord::Base
   belongs_to :club
 
   validates :sport_id, :club_id, :presence => true
-  attr_accessible :club, :sport
+  attr_accessible :club_id, :sport_id
 end

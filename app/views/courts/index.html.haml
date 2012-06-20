@@ -1,13 +1,12 @@
 - model_class = Court.new.class
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize
+  %h1 Canchas del Club #{@club.name}
 %table.table.table-striped
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:sport_id)
       %th=t '.actions', :default => t("helpers.actions")
-
 
   %tbody
     - @courts.each do |court|

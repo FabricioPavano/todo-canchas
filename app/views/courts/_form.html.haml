@@ -1,0 +1,11 @@
+
+%h1= @club.name
+
+
+= simple_form_for [@club, @court], :html => { :class => 'form-horizontal' } do |f|
+  = f.association :sport
+
+
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), club_courts_path(@court.club.id), :class => 'btn'

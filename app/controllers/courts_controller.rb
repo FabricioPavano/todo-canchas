@@ -9,7 +9,8 @@ class CourtsController < ApplicationController
   end
 
   def show
-    @court = Club.find(params[:club_id]).find(:id)	
+    @club = Club.find(params[:club_id])
+    @court = @club.courts.find(params[:id])	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @club }
@@ -19,7 +20,9 @@ class CourtsController < ApplicationController
   # GET /clubs/new
   # GET /clubs/new.json
   def new
-    @court = Club.find(params[:club_id]).new
+    @club = Club.find(params[:club_id])
+    @court = Court.new
+    @court.club = @club
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,15 +38,16 @@ class CourtsController < ApplicationController
   # POST /clubs
   # POST /clubs.json
   def create
-    @court = Club.find(params[:club_id]).new
+    @club = Club.find(params[:club_id])
+    @court = @club.courts.new(params[:court])
 
     respond_to do |format|
       if @court.save
-        format.html { redirect_to @club, notice: 'Club was successfully created.' }
-        format.json { render json: @club, status: :created, location: @club }
+        format.html { redirect_to [@club, @court], notice: 'Club was successfully created.' }
+        format.json { render json: [@club, @court], status: :created, location: [@club, @court] }
       else
         format.html { render action: "new" }
-        format.json { render json: @club.errors, status: :unprocessable_entity }
+        format.json { render json: @court.errors, status: :unprocessable_entity }
       end
     end
   end
