@@ -11,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,7 +32,8 @@ group :test do
 end
 
 group :development do
-
+  #solo para el rodri :)
+  gem 'sqlite3' if File.open('config/database.yml').read.include? "sqlite3"
 end
 
 # To use ActiveModel has_secure_password
