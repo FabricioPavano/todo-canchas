@@ -1,5 +1,9 @@
 Todocanchas::Application.routes.draw do
 
+  get "session/create"
+
+  get "users/new"
+
   namespace :admin do
     resources :clubs do
       resources :courts
