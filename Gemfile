@@ -39,6 +39,9 @@ end
 group :development do
   #solo para el rodri :)
   gem 'sqlite3' if File.open('config/database.yml').read.include? "sqlite3"
+  #solo para el fabri :S
+  gem 'mysql2' if File.open('config/database.yml').read.include? "mysql2"
+
 end
 
 # To use ActiveModel has_secure_password
@@ -51,7 +54,7 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+# gem 'capistrano'2
 
 # To use debugger
 # gem 'debugger'
