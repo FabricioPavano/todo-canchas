@@ -13,7 +13,7 @@ gem 'haml-rails'
 gem 'simple_form'
 
 #authentication
-gem "bcrypt-ruby", :require => "bcrypt"
+gem "bcrypt-ruby"
 
 
 # Gems used only for assets and not required
