@@ -9,6 +9,11 @@
   <p> 
     <%= label_tag :password %> <br />
     <%= password_field_tag :password %>
+  </p>  
+  <p> <%= link_to 'Olvidaste la contrasenia??', new_password_reset_path  %> </p> 
+  <p> 
+     <%= label_tag :remember_me %> <br />
+     <%= check_box_tag :remember_me, 1, params[:remember_me] %>
   </p>   
   <p>
       <%= submit_tag %> 

@@ -4,6 +4,9 @@ class Admin::ClubsController < ApplicationController
   def index
     @clubs = Club.all
 
+    
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clubs }
