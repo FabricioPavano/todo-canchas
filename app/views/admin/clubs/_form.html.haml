@@ -6,7 +6,9 @@
   = f.input :address
   = f.input :phone_number
   = f.input :courts_types, :collection => ['futbol', 'tenis', 'paddle'], :as => 'check_boxes'
-  
+  = f.input :futbol_quantity, :label => 'Cant. Canchas futbol', :as => :numeric, :wrapper_html => { :class => 'hidden' }
+  = f.input :tenis_quantity, :label => 'Cant. Canchas tenis', :as => :numeric, :wrapper_html => { :class => 'hidden' }
+  = f.input :paddle_quantity, :label => 'Cant. Canchas paddle', :as => :numeric, :wrapper_html => { :class => 'hidden' }
 
 
 
@@ -18,4 +20,3 @@
 
 
 
-     

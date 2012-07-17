@@ -32,3 +32,22 @@
         %span.add-on 
           Paddle
         =number_field_tag 'club[paddle_quantity]' 
+
+
+
+        <label class="control-label" for="optionsCheckboxList">Checkboxes</label>
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" value="option1" name="optionsCheckboxList1">
+          Option one Label 
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" value="option2" name="optionsCheckboxList2">
+          Option two 
+      </label>
+      <label class="checkbox">
+      <input type="checkbox" value="option3" name="optionsCheckboxList3">
+        Option three 
+      </label>
+    </div>
+  </label>
