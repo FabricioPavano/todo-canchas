@@ -17,7 +17,7 @@ class Club < ActiveRecord::Base
   #Validations
 
 
-  validate :mi_validator
+  validate :validate_court_type_presence
   validates_associated :courts
   validates :name, :address, :department_id, :presence => true
 
@@ -25,19 +25,32 @@ class Club < ActiveRecord::Base
 
   protected
   
-  def mi_validator
+  def validate_court_type_presence
 
     #removes empty items
     @courts_types.reject! { |i| i.empty? }
-
-    errors.add :courts_types, 'Must have at least one sport chosen' if @courts_types.empty?
+    errors.add :courts_types, 'Must have at least one court type chosen' if @courts_types.empty?
 
   end  
 
   def create_courts
-
-      #debugger 
       
+      futbol = Sport.where(:name => 'Futbol').first
+      tenis  = Sport.where(:name => 'Tenis').first
+      paddle = Sport.where(:name => 'Paddle').first
+
+      unless @futbol_quantity.blank? 
+        @futbol_quantity.to_i.times { self.courts.build sport_id: futbol.id }
+      end
+
+      unless @tenis_quantity.blank? 
+        @tenis_quantity.to_i.times { self.courts.build sport_id: tenis.id }
+      end
+
+      unless @paddle_quantity.blank? 
+        @paddle_quantity.to_i.times { self.courts.build sport_id: paddle.id }
+      end             
+     
     
   end
 
