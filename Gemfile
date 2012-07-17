@@ -41,6 +41,8 @@ group :development do
   gem 'sqlite3' if File.open('config/database.yml').read.include? "sqlite3"
   #solo para el fabri :S
   gem 'mysql2' if File.open('config/database.yml').read.include? "mysql2"
+  gem 'gem-open'
+
 
 end
 
@@ -57,4 +59,4 @@ end
 # gem 'capistrano'2
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'

@@ -1,0 +1,34 @@
+ cada campo de un formulario en bootstrap tiene las siguientes etiquiets y clases
+
+ %label.control-label 
+      Tipos de Canchas
+    .controls
+      %label.checkbox.inline
+        = check_box_tag 'club[courts_types][]', 'futbol', false, 'id' => 'checkbox-futbol' 
+        Futbol
+      %label.checkbox.inline
+        = check_box_tag 'club[courts_types][]', 'tenis', false, 'id' => 'checkbox-tenis'
+        Tennis
+      %label.checkbox.inline
+        = check_box_tag 'club[courts_types][]', 'paddle', false, 'id' => 'checkbox-paddle'
+        Paddle
+      %span.help-inline 
+        Debes indicar por lo menos un tipo de canchas!  
+  .control-group.cantidad-canchas#cantidad-futbol.hidden
+    .controls
+      .input-prepend
+        %span.add-on 
+          Futbol
+        =number_field_tag 'club[futbol_quantity]'
+  .control-group.cantidad-canchas#cantidad-tenis.hidden
+    .controls
+      .input-prepend
+        %span.add-on 
+          Tennis
+        =number_field_tag 'club[tenis_quantity]'
+  .control-group.cantidad-canchas#cantidad-paddle.hidden
+    .controls
+      .input-prepend
+        %span.add-on 
+          Paddle
+        =number_field_tag 'club[paddle_quantity]' 

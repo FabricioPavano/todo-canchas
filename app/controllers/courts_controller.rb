@@ -20,6 +20,9 @@ class CourtsController < ApplicationController
   # GET /clubs/new
   # GET /clubs/new.json
   def new
+    
+    render :inline => '<% puts "Hola mundo!" %>' and return
+
     @club = Club.find(params[:club_id])
     @court = Court.new
     @court.club = @club
@@ -38,8 +41,11 @@ class CourtsController < ApplicationController
   # POST /clubs
   # POST /clubs.json
   def create
+    
     @club = Club.find(params[:club_id])
-    @court = @club.courts.new(params[:court])
+    
+    debugger
+    params
 
     respond_to do |format|
       if @court.save

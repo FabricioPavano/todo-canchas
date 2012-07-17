@@ -24,6 +24,7 @@ class Admin::ClubsController < ApplicationController
   # GET /clubs/new
   # GET /clubs/new.json
   def new
+
     @club = Club.new
 
     respond_to do |format|
@@ -41,7 +42,7 @@ class Admin::ClubsController < ApplicationController
   # POST /clubs.json
   def create
     @club = Club.new(params[:club])
-
+                                      
     respond_to do |format|
       if @club.save
         format.html { redirect_to [:admin, @club], notice: 'Club was successfully created.' }
