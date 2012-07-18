@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
+  
+
+
+
   //muestra/esconde campos con cantidad de canchas de
   //acuerdo a los checkboxes
   function mostrarCamposCantidadCanchas(){
-    
-    
-
 
     if($('#club_courts_types_futbol').is(':checked') == $('#club_futbol_quantity').parents('.control-group').hasClass('hidden'))
       $('#club_futbol_quantity').parents('.control-group').toggleClass('hidden')    
@@ -15,8 +16,6 @@ $(document).ready(function(){
 
     if($('#club_courts_types_paddle').is(':checked') == $('#club_paddle_quantity').parents('.control-group').hasClass('hidden'))
       $('#club_paddle_quantity').parents('.control-group').toggleClass('hidden')   
-
-
 
   }
 

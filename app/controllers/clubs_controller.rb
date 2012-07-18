@@ -1,6 +1,8 @@
-class Admin::ClubsController < ApplicationController
+class ClubsController < ApplicationController
   
-  layout 'admin'
+  # GET /
+  def search
+  end
 
   # GET /clubs
   # GET /clubs.json
@@ -27,7 +29,6 @@ class Admin::ClubsController < ApplicationController
   # GET /clubs/new
   # GET /clubs/new.json
   def new
-
     @club = Club.new
 
     respond_to do |format|
@@ -45,10 +46,10 @@ class Admin::ClubsController < ApplicationController
   # POST /clubs.json
   def create
     @club = Club.new(params[:club])
-                                      
+
     respond_to do |format|
       if @club.save
-        format.html { redirect_to [:admin, @club], notice: 'Club was successfully created.' }
+        format.html { redirect_to @club, notice: 'Club was successfully created.' }
         format.json { render json: @club, status: :created, location: @club }
       else
         format.html { render action: "new" }
@@ -64,7 +65,7 @@ class Admin::ClubsController < ApplicationController
 
     respond_to do |format|
       if @club.update_attributes(params[:club])
-        format.html { redirect_to [:admin, @club], notice: 'Club was successfully updated.' }
+        format.html { redirect_to @club, notice: 'Club was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,7 +81,7 @@ class Admin::ClubsController < ApplicationController
     @club.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_clubs_url }
+      format.html { redirect_to clubs_url }
       format.json { head :no_content }
     end
   end

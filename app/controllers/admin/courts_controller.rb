@@ -1,4 +1,7 @@
 class Admin::CourtsController < ApplicationController
+  
+  layout 'admin'
+
   def index
     @club = Club.find(params[:club_id])
     @courts = @club.courts

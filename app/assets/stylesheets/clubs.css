@@ -1,15 +1,23 @@
-#cantCanchas{
 
-  border: solid 1px;
-  background-color: white;
-  height: 50px;
-  margin:15px;
+.body {
+  font-family: "Helvetica Neue" !important
 
 }
 
 .controls{
 
   
+
+}
+  
+
+
+.container {
+
+  /*background-color: rgb(220,234,244) ;*/
+  height: 600px
+  
+
 
 }
 

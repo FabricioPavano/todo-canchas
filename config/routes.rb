@@ -1,12 +1,17 @@
 Todocanchas::Application.routes.draw do
 
+  get "clubs/search"
+  get "admin" => "admin/clubs#index"
+
   namespace :admin do
     resources :clubs do
       resources :courts
     end
   end
 
-  root :to => 'admin/clubs#index'
+  resources :clubs
+
+  root :to => 'clubs#search'
 
 
   # The priority is based upon order of creation:
