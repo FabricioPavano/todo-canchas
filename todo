@@ -1,7 +1,14 @@
 
+
+IMPLEMENTAR BUSQUEDA POR DEPARTAMENTO
+- DONE Al hacer un submit con un departamento valido debe dirigirse al action Index
+- El action Index debe traer todos los departamentos y guardarlos en una variable de instancia
+- finalmente se debe renderizar el index template
+
+
 FUNCIONALIDAD AUTO DETECTAR DEPARTAMENTO
 
-- hacer una llamada ajax al cargar el search template que traiga todos los deptos
-- guardarlos en un array
-- en un before submit, fijarse si lo que se va a enviar es un depto
-- en caso afirmativo enviar el input name como departamento
+- DONE hacer una llamada ajax al cargar el search template que traiga todos los deptos
+- DONE guardarlos en un array
+- DONE en un before submit, fijarse si lo que se va a enviar es un depto
+- DONE en caso afirmativo enviar el input name como departamento

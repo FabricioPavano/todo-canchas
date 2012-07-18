@@ -12,6 +12,11 @@ class Club < ActiveRecord::Base
   #hooks
   before_save :create_courts
 
+  #scopes
+
+  scope :by_department, lambda { |dep|
+    joins(:department).where('departments.name = ?', dep) unless dep.nil?
+  }
 
 
   #Validations

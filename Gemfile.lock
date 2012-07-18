@@ -74,6 +74,7 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hike (1.2.1)
+    hirb (0.7.0)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -183,6 +184,7 @@ DEPENDENCIES
   gem-open
   haml
   haml-rails
+  hirb
   jquery-rails
   mysql2
   pg

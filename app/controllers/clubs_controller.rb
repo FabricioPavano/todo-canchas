@@ -8,7 +8,8 @@ class ClubsController < ApplicationController
   # GET /clubs.json
   def index
     
-    debugger
+    @clubs = Club.by_department(params['department'])
+    @clubs.all
 
     respond_to do |format|
       format.html # index.html.erb

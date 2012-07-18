@@ -9,13 +9,6 @@ $(document).ready(function(){
 
 
 
-$('.form-search').submit(function(){
-    var value = $('.form-search input.search-query').val()
-    if(check_if_department(value)){
-        $('.form-search input.search-query').attr('name','department')
-    }
-})
-
 
 
 

@@ -18,4 +18,4 @@
 
 //optional funcitonality
 
-//= require custom/detect-department
+//= require optional/detect-department

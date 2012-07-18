@@ -42,6 +42,7 @@ group :development do
   #solo para el fabri :S
   gem 'mysql2' if File.open('config/database.yml').read.include? "mysql2"
   gem 'gem-open'
+  gem 'hirb'
 
 
 end
