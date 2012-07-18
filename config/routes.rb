@@ -1,5 +1,7 @@
 Todocanchas::Application.routes.draw do
 
+  get "departments/fetch"
+
   get "clubs/search"
   get "admin" => "admin/clubs#index"
 

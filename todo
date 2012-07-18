@@ -1,0 +1,7 @@
+
+FUNCIONALIDAD AUTO DETECTAR DEPARTAMENTO
+
+- hacer una llamada ajax al cargar el search template que traiga todos los deptos
+- guardarlos en un array
+- en un before submit, fijarse si lo que se va a enviar es un depto
+- en caso afirmativo enviar el input name como departamento

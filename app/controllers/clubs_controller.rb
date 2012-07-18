@@ -7,7 +7,8 @@ class ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
-    @clubs = Club.all
+    
+    debugger
 
     respond_to do |format|
       format.html # index.html.erb

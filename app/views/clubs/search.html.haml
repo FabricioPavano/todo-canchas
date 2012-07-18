@@ -1,5 +1,6 @@
 
 
+
 .hero-unit 
   %h1
     Todo Canchas.com
@@ -7,22 +8,8 @@
     El directorio de canchas de Futbol, Tenis y Paddle de Mendoza   
 
 
-/ = form_tag (clubs_path, :method => 'post') do 
-
-/ = form_tag(clubs_path, :class => 'form-horizontal') do
-/   .control-group
-/     %label.control-label{:for => "input"}
-/       Nombre  
-/     .controls  
-/       = text_field_tag :input 
-/   .control-group
-/     .controls  
-/       = submit_tag 'Buscar!'
-
-
-
 = form_tag(clubs_path, :method => 'get', :class => 'well form-search') do
-  %input.input-medium.search-query{type: 'text'}
+  %input.input-medium.search-query{type: 'text', name: 'search-value'}
   %button.btn{type: 'submit'}
     Buscar
   %span.help-inline
