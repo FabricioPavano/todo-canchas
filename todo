@@ -1,9 +1,11 @@
 
+DISENAR CLUB INDEX VIEW BASICO
+- Debe utilizar bootstrap 
 
 IMPLEMENTAR BUSQUEDA POR DEPARTAMENTO
 - DONE Al hacer un submit con un departamento valido debe dirigirse al action Index
-- El action Index debe traer todos los departamentos y guardarlos en una variable de instancia
-- finalmente se debe renderizar el index template
+- DONE El action Index debe traer todos los departamentos y guardarlos en una variable de instancia
+- DONE finalmente se debe renderizar el index template
 
 
 FUNCIONALIDAD AUTO DETECTAR DEPARTAMENTO

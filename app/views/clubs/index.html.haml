@@ -1,18 +1,18 @@
-%h1 Listing clubs
 
-%table
-  %tr
-    %th
-    %th
-    %th
 
-  - @clubs.each do |club|
-    %tr
-      %td= club.name
-      %td= link_to 'Show', club
-      %td= link_to 'Edit', edit_club_path(club)
-      %td= link_to 'Destroy', club, :confirm => 'Are you sure?', :method => :delete
+.row
+  .span8.offset2
+    %h1
+      Lista de Clubes!
+
+- @clubs.each do |club|
+  .row
+    .span8.offset2.club-item
+      .row
+        .span4.club-name
+          %h2
+            =link_to club.name, club
 
 %br
 
-= link_to 'New Club', new_club_path
+

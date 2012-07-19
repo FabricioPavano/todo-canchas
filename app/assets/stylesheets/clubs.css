@@ -9,15 +9,31 @@
   
 
 }
-  
-
+ 
+/*Utilizao para debugs*/
+.ver {
+  background-color: yellow;
+}
 
 .container {
 
-  /*background-color: rgb(220,234,244) ;*/
+  /*    background-cyellow rgb(220,234,244) ;*/
   height: 600px
-  
+
+}
+
+.club-item{
+
+  height: 100px;
+  margin-bottom: 30px;
+  background-color: #F0F8FF;
+  border-width: 1px;
 
 
 }
 
+.club-name{
+
+  margin-top: 20px;
+  padding-left: 30px; 
+}
