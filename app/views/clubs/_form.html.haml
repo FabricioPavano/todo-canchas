@@ -1,7 +1,8 @@
-= simple_form_for(@club) do |f|
-  = f.error_notification
-
-  .form-inputs
-
+= simple_form_for @club, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :department_id
+  = f.input :address
+  = f.input :phone_number
   .form-actions
-    = f.button :submit
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), clubs_path, :class => 'btn'
