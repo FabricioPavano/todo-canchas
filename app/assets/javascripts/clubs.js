@@ -8,29 +8,52 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
   //muestra/esconde campos con cantidad de canchas de
   //acuerdo a los checkboxes
   function mostrarCamposCantidadCanchas(){
 
-    if($('#club_courts_types_futbol').is(':checked') == $('#club_futbol_quantity').parents('.control-group').hasClass('hidden'))
-      $('#club_futbol_quantity').parents('.control-group').toggleClass('hidden')    
-    
-    if($('#club_courts_types_tenis').is(':checked') == $('#club_tenis_quantity').parents('.control-group').hasClass('hidden'))
-      $('#club_tenis_quantity').parents('.control-group').toggleClass('hidden')    
+    // console.log(1,$('#checkbox-tenis').is(':checked'))
+    // console.log(2,$('#cantidad-tenis').hasClass('hidden'))
 
-    if($('#club_courts_types_paddle').is(':checked') == $('#club_paddle_quantity').parents('.control-group').hasClass('hidden'))
-      $('#club_paddle_quantity').parents('.control-group').toggleClass('hidden')   
+
+
+    if($('#checkbox-futbol').is(':checked') && $('#club_futbol_quantity').parents('.control-group').hasClass('hidden')){
+        $('#club_futbol_quantity').parents('.control-group').removeClass('hidden')
+        $('#club_futbol_quantity').prop('disabled', false)
+    }
+
+    if(!$('#checkbox-futbol').is(':checked') && !$('#club_futbol_quantity').parents('.control-group').hasClass('hidden')){
+        $('#club_futbol_quantity').parents('.control-group').addClass('hidden')
+        $('#club_futbol_quantity').prop('disabled', true)
+    }
+
+     if($('#checkbox-tenis').is(':checked') && $('#club_tenis_quantity').parents('.control-group').hasClass('hidden')){
+        $('#club_tenis_quantity').parents('.control-group').removeClass('hidden')
+        $('#club_tenis_quantity').prop('disabled', false)
+    }
+
+    if(!$('#checkbox-tenis').is(':checked') && !$('#club_tenis_quantity').parents('.control-group').hasClass('hidden')){
+        $('#club_tenis_quantity').parents('.control-group').addClass('hidden')
+        $('#club_tenis_quantity').prop('disabled', true)
+    }
+
+    if($('#checkbox-paddle').is(':checked') && $('#club_paddle_quantity').parents('.control-group').hasClass('hidden')){
+        $('#club_paddle_quantity').parents('.control-group').removeClass('hidden')
+        $('#club_paddle_quantity').prop('disabled', false)
+    }
+
+    if(!$('#checkbox-paddle').is(':checked') && !$('#club_paddle_quantity').parents('.control-group').hasClass('hidden')){
+        $('#club_paddle_quantity').parents('.control-group').addClass('hidden')
+        $('#club_paddle_quantity').prop('disabled', true)
+    }
+
 
   }
 
   //asginamos el handler 
-  $('div.check_boxes').click(mostrarCamposCantidadCanchas)
+  $('#checkbox-futbol').click(mostrarCamposCantidadCanchas)
+  $('#checkbox-tenis').click(mostrarCamposCantidadCanchas)
+  $('#checkbox-paddle').click(mostrarCamposCantidadCanchas)
 
 
 

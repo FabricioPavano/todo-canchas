@@ -12,6 +12,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'rmagick'
+gem "jquery-fileupload-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.

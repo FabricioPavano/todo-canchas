@@ -1,22 +1,29 @@
-
-
-= simple_form_for [:admin, @club], :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for [:admin, @club], :html => { :class => 'form-horizontal', :multipart => true } do |f|
   = f.input :name
   = f.association :department
   = f.input :address
   = f.input :phone_number
-  = f.input :courts_types, :collection => ['Futbol', 'Tenis', 'Paddle'], :as => :check_boxes, :label => 'Court Types', :item_wrapper_class => 'inline' 
-  = f.input :futbol_quantity, :label => 'Cant. Canchas futbol', :as => :numeric, :wrapper_html => { :class => 'hidden' }
-  = f.input :tenis_quantity, :label => 'Cant. Canchas tenis', :as => :numeric, :wrapper_html => { :class => 'hidden' }
-  = f.input :paddle_quantity, :label => 'Cant. Canchas paddle', :as => :numeric, :wrapper_html => { :class => 'hidden' }
-
-
-
-
+  .control-group
+    %label.control-label 
+      Tipos de Canchas
+    .controls
+      %label.checkbox.inline
+        = check_box_tag 'club[courts_types][]', 'futbol', false, 'id' => 'checkbox-futbol', :class => 'checkbox-canchas', :checked => @club.has_futbol_courts? 
+        Futbol
+      %label.checkbox.inline  
+        = check_box_tag 'club[courts_types][]', 'tenis', false, 'id' => 'checkbox-tenis', :class => 'checkbox-canchas', :checked => @club.has_tenis_courts? 
+        Tennis
+      %label.checkbox.inline
+        = check_box_tag 'club[courts_types][]', 'paddle', false, 'id' => 'checkbox-paddle', :class => 'checkbox-canchas', :checked => @club.has_paddle_courts? 
+        Paddle
+  =f.input :futbol_quantity, :label => 'Cant. Canchas futbol', :as => :numeric, :wrapper_html => hide_futbol_quantity?(@club)
+  =f.input :tenis_quantity, :label => 'Cant. Canchas tenis', :as => :numeric, :wrapper_html => hide_tenis_quantity?(@club)
+  =f.input :paddle_quantity, :label => 'Cant. Canchas paddle', :as => :numeric, :wrapper_html => hide_paddle_quantity?(@club)
+  =f.input :photo, as: 'file'
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_clubs_path, :class => 'btn'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")),admin_clubs_path, :class => 'btn'
 
 
 

@@ -18,6 +18,10 @@
   %strong= model_class.human_attribute_name(:phone_number) + ':'
   %br
   = @club.phone_number
+%p
+  %strong= model_class.human_attribute_name(:photo) + ':'
+  %br
+  = image_tag @club.photo_url(:thumb).to_s
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admin_clubs_path, :class => 'btn'
