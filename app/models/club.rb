@@ -91,11 +91,7 @@ class Club < ActiveRecord::Base
     qty_hash
 
   end
-
-
-
-  protected
- 
+   
   def create_courts
       futbol = Sport.where(:name => 'Futbol').first
       tenis  = Sport.where(:name => 'Tenis').first
@@ -114,4 +110,15 @@ class Club < ActiveRecord::Base
       end             
   end
 
+  #one convenient method to pass jq_upload the necessary information
+  def to_jq_upload
+    {
+      "name" => read_attribute(:photo),
+      "size" => self.size,
+      "url" => self.url,
+      "thumbnail_url" => self.thumb.url,
+      "delete_url" => photo_path(:id => id),
+      "delete_type" => "DELETE" 
+    }
+  end
 end

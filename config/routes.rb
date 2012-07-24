@@ -1,9 +1,10 @@
 Todocanchas::Application.routes.draw do
 
+  get "photos/upload"
   get "departments/fetch"
-
   get "clubs/search"
   get "admin" => "admin/clubs#index"
+  get "prueba" => "admin/clubs#prueba"
 
   namespace :admin do
     resources :clubs do
@@ -12,6 +13,8 @@ Todocanchas::Application.routes.draw do
   end
 
   resources :clubs
+
+  resources :photos, :only => [:index, :create, :destroy]
 
   root :to => 'clubs#search'
 

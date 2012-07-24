@@ -2,6 +2,10 @@ class Admin::ClubsController < ApplicationController
   
   layout 'admin'
 
+  def prueba
+     
+  end
+
   # GET /clubs
   # GET /clubs.json
   def index
@@ -44,6 +48,10 @@ class Admin::ClubsController < ApplicationController
   # POST /clubs
   # POST /clubs.json
   def create
+    
+
+    puts 'entre'
+    debugger
     @club = Club.new(params[:club])
                                       
     respond_to do |format|
