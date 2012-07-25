@@ -1,22 +1,31 @@
 Todocanchas::Application.routes.draw do
 
-  get "photos/upload"
-  get "departments/fetch"
-  get "clubs/search"
+  root :to => 'clubs#search'
+
   get "admin" => "admin/clubs#index"
   get "prueba" => "admin/clubs#prueba"
+
+
 
   namespace :admin do
     resources :clubs do
       resources :courts
     end
+    resources :pictures, :only => [:index, :create, :destroy] 
   end
 
+
+
+  resources :pictures, :only => [:index, :create, :destroy] 
   resources :clubs
-
-  resources :photos, :only => [:index, :create, :destroy]
-
-  root :to => 'clubs#search'
+  
+  
+  get "admin/upload/:club_id" => "admin/pictures#upload", :as => "admin_upload"
+  get "upload/:club_id" => "pictures#upload"
+  get "departments/fetch"
+  get "clubs/search"
+      
+  
 
 
   # The priority is based upon order of creation:

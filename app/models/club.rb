@@ -2,11 +2,11 @@ class Club < ActiveRecord::Base
   
   attr_accessible :address, :name, :phone_number, :department_id, :futbol_quantity, :tenis_quantity, :paddle_quantity, :courts_types, :photo
   attr_accessor   :futbol_quantity, :tenis_quantity, :paddle_quantity, :courts_types, :virtual
-  mount_uploader :photo, PhotoUploader
 
   #associations
   belongs_to :department
-  has_many :courts
+  has_many :courts, :dependent => :destroy
+  has_many :pictures 
 
   accepts_nested_attributes_for :courts, allow_destroy: true
 
@@ -91,23 +91,47 @@ class Club < ActiveRecord::Base
     qty_hash
 
   end
+
+
    
+  #Creates or destroy courts to match the quantity indicated by the user
+
   def create_courts
       futbol = Sport.where(:name => 'Futbol').first
       tenis  = Sport.where(:name => 'Tenis').first
       paddle = Sport.where(:name => 'Paddle').first
 
-      unless @futbol_quantity.blank? 
-        @futbol_quantity.to_i.times { self.courts.build sport_id: futbol.id }
+      # court_quantity '*' indicates how many courts already has
+      # @*_quantity indicates how many tha user wants
+      diffFutbol = court_quantity('futbol') - @futbol_quantity.to_i 
+
+      if(diffFutbol > 0)
+        diffFutbol.times { self.courts.delete(self.courts.where('sport_id = ?',futbol.id).last)}
       end
 
-      unless @tenis_quantity.blank? 
-        @tenis_quantity.to_i.times { self.courts.build sport_id: tenis.id }
+      if(diffFutbol < 0)
+        diffFutbol.abs.times { self.courts.build sport_id: futbol.id }
       end
 
-      unless @paddle_quantity.blank? 
-        @paddle_quantity.to_i.times { self.courts.build sport_id: paddle.id }
-      end             
+      diffTenis = court_quantity('tenis') - @tenis_quantity.to_i 
+
+      if(diffTenis > 0)
+        diffTenis.times { self.courts.delete(self.courts.where('sport_id = ?',tenis.id).last)}
+      end
+
+      if(diffTenis < 0)
+        diffTenis.abs.times { self.courts.build sport_id: tenis.id }
+      end
+
+      diffPaddle = court_quantity('paddle') - @paddle_quantity.to_i 
+
+      if(diffPaddle > 0)
+        diffPaddle.times { self.courts.delete(self.courts.where('sport_id = ?',paddle.id).last)}
+      end
+
+      if(diffPaddle < 0)
+        diffPaddle.abs.times { self.courts.build sport_id: paddle.id }
+      end         
   end
 
   #one convenient method to pass jq_upload the necessary information

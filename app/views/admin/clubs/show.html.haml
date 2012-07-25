@@ -1,3 +1,4 @@
+
 - model_class = @club.class
 .page-header
   %h1=t '.title', :default => model_class.model_name.human
@@ -19,9 +20,17 @@
   %br
   = @club.phone_number
 %p
-  %strong= model_class.human_attribute_name(:photo) + ':'
+  %strong= 'Futbol Courts' + ':'
   %br
-  = image_tag @club.photo_url(:thumb).to_s
+  = @club.futbol_quantity
+%p
+  %strong= 'Tenis Courts' + ':'
+  %br
+  = @club.tenis_quantity
+%p
+  %strong= 'Paddle Courts' + ':'
+  %br
+  = @club.paddle_quantity
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admin_clubs_path, :class => 'btn'

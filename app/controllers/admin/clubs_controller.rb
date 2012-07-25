@@ -3,7 +3,6 @@ class Admin::ClubsController < ApplicationController
   layout 'admin'
 
   def prueba
-     
   end
 
   # GET /clubs
@@ -21,7 +20,6 @@ class Admin::ClubsController < ApplicationController
   # GET /clubs/1.json
   def show
     @club = Club.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @club }
@@ -31,9 +29,7 @@ class Admin::ClubsController < ApplicationController
   # GET /clubs/new
   # GET /clubs/new.json
   def new
-
     @club = Club.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @club }
@@ -48,15 +44,10 @@ class Admin::ClubsController < ApplicationController
   # POST /clubs
   # POST /clubs.json
   def create
-    
-
-    puts 'entre'
-    debugger
     @club = Club.new(params[:club])
-                                      
     respond_to do |format|
       if @club.save
-        format.html { redirect_to [:admin, @club], notice: 'Club was successfully created.' }
+        format.html { redirect_to(admin_upload_path @club.id) }
         format.json { render json: @club, status: :created, location: @club }
       else
         format.html { render action: "new" }
@@ -69,7 +60,6 @@ class Admin::ClubsController < ApplicationController
   # PUT /clubs/1.json
   def update
     @club = Club.find(params[:id])
-
     respond_to do |format|
       if @club.update_attributes(params[:club])
         format.html { redirect_to [:admin, @club], notice: 'Club was successfully updated.' }
@@ -86,7 +76,6 @@ class Admin::ClubsController < ApplicationController
   def destroy
     @club = Club.find(params[:id])
     @club.destroy
-
     respond_to do |format|
       format.html { redirect_to admin_clubs_url }
       format.json { head :no_content }
