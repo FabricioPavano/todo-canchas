@@ -1,10 +1,13 @@
 
-RESOLVER
 
- - Debo poder obtener cuantas canchas ya estan guardadas en la base de datos para un determinado club 
 
-DISENAR CLUB INDEX VIEW BASICO
-- Debe utilizar bootstrap 
+REALIZAR VIEW DE CLUBS
+
+
+RESOLVER PROBLEMA
+
+ - DONE Debo poder obtener cuantas canchas ya estan guardadas en la base de datos para un determinado club 
+
 
 IMPLEMENTAR BUSQUEDA POR DEPARTAMENTO
 - DONE Al hacer un submit con un departamento valido debe dirigirse al action Index

@@ -22,6 +22,7 @@
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'
+    = link_to('Photos', admin_upload_path(@club.id), :class => 'btn btn-primary') if @club.persisted?
     = link_to t('.cancel', :default => t("helpers.links.cancel")),admin_clubs_path, :class => 'btn'
 
 

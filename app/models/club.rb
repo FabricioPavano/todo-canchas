@@ -92,17 +92,19 @@ class Club < ActiveRecord::Base
 
   end
 
-
    
   #Creates or destroy courts to match the quantity indicated by the user
+  #Can be refactored
 
   def create_courts
-      futbol = Sport.where(:name => 'Futbol').first
+      futbol = Sport.where(:name => 'futbol').first
       tenis  = Sport.where(:name => 'Tenis').first
       paddle = Sport.where(:name => 'Paddle').first
 
       # court_quantity '*' indicates how many courts already has
       # @*_quantity indicates how many tha user wants
+
+      ### Futbol Courts
       diffFutbol = court_quantity('futbol') - @futbol_quantity.to_i 
 
       if(diffFutbol > 0)
@@ -113,6 +115,9 @@ class Club < ActiveRecord::Base
         diffFutbol.abs.times { self.courts.build sport_id: futbol.id }
       end
 
+
+      ### Tenis Courts
+
       diffTenis = court_quantity('tenis') - @tenis_quantity.to_i 
 
       if(diffTenis > 0)
@@ -122,6 +127,8 @@ class Club < ActiveRecord::Base
       if(diffTenis < 0)
         diffTenis.abs.times { self.courts.build sport_id: tenis.id }
       end
+
+      ### Paddle Courts
 
       diffPaddle = court_quantity('paddle') - @paddle_quantity.to_i 
 
@@ -134,15 +141,4 @@ class Club < ActiveRecord::Base
       end         
   end
 
-  #one convenient method to pass jq_upload the necessary information
-  def to_jq_upload
-    {
-      "name" => read_attribute(:photo),
-      "size" => self.size,
-      "url" => self.url,
-      "thumbnail_url" => self.thumb.url,
-      "delete_url" => photo_path(:id => id),
-      "delete_type" => "DELETE" 
-    }
-  end
 end
