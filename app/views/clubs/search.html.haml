@@ -1,19 +1,20 @@
 
 
+.row
+  .span9
+    .hero-unit 
+      %h1
+        Todo Canchas.com
+      %p
+        El directorio de canchas de Futbol, Tenis y Paddle de Mendoza   
 
-.hero-unit 
-  %h1
-    Todo Canchas.com
-  %p
-    El directorio de canchas de Futbol, Tenis y Paddle de Mendoza   
 
-
-= form_tag(clubs_path, :method => 'get', :class => 'well form-search') do
-  %input.input-medium.search-query{type: 'text', name: 'search-value'}
-  %button.btn{type: 'submit'}
-    Buscar
-  %span.help-inline
-    Busca canchas por departamento o por el nombre del club!
+    = form_tag(clubs_path, :method => 'get', :class => 'well form-search') do
+      %input.input-medium.search-query{type: 'text', name: 'search-value'}
+      %button.btn{type: 'submit'}
+        Buscar
+      %span.help-inline
+        Busca canchas por departamento o por el nombre del club!
 
            
 

@@ -1,30 +1,84 @@
 - model_class = @club.class
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human
+
+.row
+  .span8.offset1
+    .page-header.alert.alert-info
+
+      %h1
+        =@club.name
+        %small
+          =@club.department.name
+  
 
 
-%ul
-  %li 
-    =image_tag 'uploads/club/photo/3/thumb_paddle-tennis-court'
+    .row
+      .span7.show-club-info-div
+        %fieldset
+          %legend
+            Informacion de Contacto
+        
+          %h3.gray
+            Direccion:
+          %h4
+            =@club.address
 
-%p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
-  = @club.name
-%p
-  %strong= model_class.human_attribute_name(:department_id) + ':'
-  %br
-  = @club.department_id
-%p
-  %strong= model_class.human_attribute_name(:address) + ':'
-  %br
-  = @club.address
-%p
-  %strong= model_class.human_attribute_name(:phone_number) + ':'
-  %br
-  = @club.phone_number
+          %br  
 
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), clubs_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_club_path(@club), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), club_path(@club), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'
+          %h3.gray
+            Telefono:
+          %h4
+            =@club.phone_number    
+
+          %br
+          %br  
+
+        %fieldset
+          %legend
+            Fotos      
+
+          %br
+
+          .pics
+            -@club.pictures.each_with_index do |picture, index|  
+              =image_tag picture.picture_url(:medium_size), :size => '400x300'
+
+          / %ul.thumbnails
+          /   %li.span3
+          /     %a
+          /       %img{:src=>"http://placehold.it/260x180"}    
+
+
+
+
+
+
+/   - @club.pictures.each_with_index do |picture, index| 
+/     = link_to image_tag(picture.picture_url(:thumb)),picture.picture_url, :class => 'photos' if (index == 0)
+/     = link_to '' ,picture.picture_url, :class => 'photos' if (index > 0)
+   
+
+
+
+
+/ %p
+/   %strong= model_class.human_attribute_name(:name) + ':'
+/   %br
+/   = @club.name
+/ %p
+/   %strong= model_class.human_attribute_name(:department_id) + ':'
+/   %br
+/   = @club.department_id
+/ %p
+/   %strong= model_class.human_attribute_name(:address) + ':'
+/   %br
+/   = @club.address
+/ %p
+/   %strong= model_class.human_attribute_name(:phone_number) + ':'
+/   %br
+/   = @club.phone_number
+
+/ .form-actions
+/   = link_to t('.back', :default => t("helpers.links.back")), clubs_path, :class => 'btn'
+/   = link_to t('.edit', :default => t("helpers.links.edit")), edit_club_path(@club), :class => 'btn'
+/   = link_to t('.destroy', :default => t("helpers.links.destroy")), club_path(@club), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'
+

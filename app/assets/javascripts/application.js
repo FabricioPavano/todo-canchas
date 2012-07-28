@@ -16,7 +16,6 @@
 //= require twitter/bootstrap
 //= require_directory .
 
-
 //optional funcitonality
 
 //= require optional/detect-department

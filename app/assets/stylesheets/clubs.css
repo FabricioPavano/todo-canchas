@@ -10,6 +10,37 @@
 
 }
  
+.pics {  
+    padding: 0;  
+    margin-left:  20px;  
+    width: 400;
+    height: 300;
+} 
+ 
+.pics img {  
+    padding: 15px;  
+    border:  1px solid #ccc;  
+    background-color: #eee;  
+    width: 400;
+    height: 300;
+    top:  0; 
+    left: 0 
+} 
+
+.gray{
+  color: gray
+}
+
+
+
+
+.show-club-info-div{
+
+  padding-left: 20px
+
+}
+
+
 /*Utilizao para debugs*/
 .ver {
   background-color: yellow;
