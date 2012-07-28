@@ -33,8 +33,12 @@ class Club < ActiveRecord::Base
 
   def validate_court_type_presence
 
+    if(@courts_types.nil?)
+      return
+    end  
+
     #removes empty items
-    @courts_types.reject! { |i| i.empty? }
+    @courts_types.reject! { |i| i.empty? } 
     if @courts_types.empty?
       errors.add :courts_types, 'Must have at least one court type chosen' 
     end  

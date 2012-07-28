@@ -1,12 +1,14 @@
 $(document).ready(function(){
 
+  //CLUB SEARCH
+
   departments = [];
 
   $.getJSON('/departments/fetch', false, function(data){
      departments = data
   })
 
-
+  //CLUB FORM
 
   //muestra/esconde campos con cantidad de canchas de
   //acuerdo a los checkboxes
@@ -57,4 +59,11 @@ $(document).ready(function(){
 
 
 
+  //CLUB SHOW 
+
+  $('.pics').cycle({
+    fx: 'scrollDown',
+    timeout: 4000
+  });
+    
 })
