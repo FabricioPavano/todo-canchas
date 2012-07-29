@@ -1,30 +1,34 @@
 - model_class = Club.new.class
 
 .row
-  .span9
-    .page-header
-      %h1=t '.title', :default => model_class.model_name.human.pluralize
-    %table.table.table-striped
-      %thead
-        %tr
-          %th= model_class.human_attribute_name(:id)
-          %th= model_class.human_attribute_name(:name)
-          %th= model_class.human_attribute_name(:department_id)
-          %th= model_class.human_attribute_name(:address)
-          %th= model_class.human_attribute_name(:phone_number)
-          %th= model_class.human_attribute_name(:created_at)
-          %th=t '.actions', :default => t("helpers.actions")
-      %tbody
-        - @clubs.each do |club|
-          %tr
-            %td= link_to club.id, club_path(club)
-            %td= club.name
-            %td= club.department_id
-            %td= club.address
-            %td= club.phone_number
-            %td=l club.created_at
-            %td
-              = link_to t('.edit', :default => t("helpers.links.edit")), edit_club_path(club), :class => 'btn btn-mini'
-              = link_to t('.destroy', :default => t("helpers.links.destroy")), club_path(club), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+  .span8.offset1
+    %h1.csfont 
+      Listado de Clubs
+    %hr
+    
+-@clubs.each do |club|
+  .row
+    .span8.offset1.club-item
+      %ul.thumbnails.index-pic
+        %li.span2
+          .thumbnail
+            =image_tag club.pictures.first.picture_url(:thumb).to_s unless club.pictures.empty?
+            =image_tag 'default.jpg' if club.pictures.empty?
+      .row
+        .span2.item-name
+          %h2.csfont2
+            = link_to(truncate(club.name, :length => 30, :separator => ' '),club) 
+            %small
+              ='(' + club.department.name + ')'
+        .span2.item-info
+          %ul
+            %li
+              %h4
+                = titleize_array(club.courts_types).to_sentence(:two_words_connector => ' y ',:last_word_connector => ' y ')         
+            %li
+              %h4
+                = 'Tel: ' + club.phone_number  
 
-    = link_to t('.new', :default => t("helpers.links.new")), new_club_path, :class => 'btn btn-primary'
+
+
+  

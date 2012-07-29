@@ -15,4 +15,10 @@ module ClubsHelper
     return { :class => 'hidden' } unless club.has_paddle_courts?
   end
 
+  def titleize_array(ary)
+    ary.map { |item| item.capitalize }  
+  end
+
+
+
 end

@@ -4,6 +4,16 @@
 
 }
 
+/* Custom fonts */
+.csfont{
+  font-family: 'Asap', sans-serif;
+}
+
+.csfont2{
+  font-family: 'Simonetta', cursive;
+}
+
+
 .controls{
 
   
@@ -31,9 +41,6 @@
   color: gray
 }
 
-
-
-
 .show-club-info-div{
 
   padding-left: 20px
@@ -41,10 +48,6 @@
 }
 
 
-/*Utilizao para debugs*/
-.ver {
-  background-color: yellow;
-}
 
 .container {
 
@@ -53,18 +56,61 @@
 
 }
 
+
+/* Index template*/
+
+
+.courts_types{
+
+  float:right;
+
+}
+
 .club-item{
 
   height: 100px;
   margin-bottom: 30px;
-  background-color: #F0F8FF;
-  border-width: 1px;
+  border-left-style: solid;
+  border-left-color: #ffdf73;
+  border-left-width: 5px;
+  border-bottom-left-radius:15px;
+
+}
+
+.item-name{
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 400px;
+  height: 3em;
+  overflow: hidden; 
+}
+
+.item-info{
+  padding-left: 10px;
+  width: 400px;
+  height: 3em;
+}
+
+.item-name a:hover{
+
+  background-color: transparent;
+  color: #ffdf73;
+  text-decoration: none;
 
 
 }
 
-.club-name{
+.index-pic{
 
-  margin-top: 20px;
-  padding-left: 30px; 
+  position:relative;
+  float:right;
+  bottom:15px;
+
+}
+
+
+
+/*Utilizao para debugs*/
+.ver {
+  background-color: yellow;
 }
