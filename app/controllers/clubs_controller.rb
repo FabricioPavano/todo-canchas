@@ -4,13 +4,18 @@ class ClubsController < ApplicationController
   def search
   end
 
+  
+  
+
   # GET /clubs
   # GET /clubs.json
   def index
     
-    @clubs = Club.by_department(params['department'])
-    @clubs.all
+    criteria = detect_search_criteria(params['search-value'])
 
+    @clubs = Club.by_department(params['department'])
+    @criteria = criteria.keys
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clubs }
@@ -87,4 +92,37 @@ class ClubsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # there are three possible search criterias 
+  # 1: Clubs in a certain department
+  # 2: Clubs which has certain court types: i.e futbol, tenis
+  # 3: Clubs with a certain name
+  # this method checks for the former two
+  # returns Hash with department and sport ids if any 
+  def detect_search_criteria search_value
+
+    search_values_array =search_value.split.compact #converts search value to array
+
+    
+    criteria = {} 
+
+    department = Department.where(:name => search_values_array).first
+    unless department.blank?
+      criteria[:department] = department.id 
+      search_values_array.delete(department.name.downcase)
+    end
+
+    sport = Sport.where(:name => search_values_array).first
+    unless sport.blank?
+      criteria[:sport] = sport.id 
+      search_values_array.delete(sport.name.downcase)
+    end
+
+    criteria[:name] = search_values_array.join unless search_values_array.blank?
+
+    criteria
+
+
+  end
+
 end

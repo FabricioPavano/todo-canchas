@@ -20,9 +20,13 @@ class Club < ActiveRecord::Base
   #scopes
 
   scope :by_department, lambda { |dep|
-    joins(:department).where('departments.name = ?', dep) unless dep.nil?
+    joins(:department).where('departments.id = ?', dep) unless dep.nil?
   }
 
+  scope :by_department, lambda { |dep|
+    joins(:department).where('departments.id = ?', dep) unless dep.nil?
+  }
+  
 
   #Validations
 
