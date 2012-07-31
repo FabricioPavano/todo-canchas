@@ -41,12 +41,6 @@ ActiveRecord::Schema.define(:version => 20120724130311) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "photos", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "pictures", :force => true do |t|
     t.string   "picture"
     t.integer  "club_id"
@@ -60,16 +54,6 @@ ActiveRecord::Schema.define(:version => 20120724130311) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
-    t.string   "password_digest"
-    t.string   "auth_token"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
   end
 
 end
