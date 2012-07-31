@@ -20,13 +20,13 @@ class Club < ActiveRecord::Base
   #scopes
 
   scope :by_department, lambda { |dep|
-    joins(:department).where('departments.id = ?', dep) unless dep.nil?
+    where('department_id = ?', dep.id) unless dep.nil?
   }
 
-  scope :by_department, lambda { |dep|
-    joins(:department).where('departments.id = ?', dep) unless dep.nil?
+  scope :by_sport, lambda { |sport|
+    joins(:courts => :sport).where(:sports => {:id => sport.id}).uniq unless sport.nil?
   }
-  
+
 
   #Validations
 
@@ -147,6 +147,85 @@ class Club < ActiveRecord::Base
       if(diffPaddle < 0)
         diffPaddle.abs.times { self.courts.build sport_id: paddle.id }
       end         
+  end
+
+  #club search function used ind index action
+
+  def self.search search_value
+
+    return if search_value.blank?
+
+    criteria = []
+
+    #first checks if the search-value matches a club name
+
+    clubs_matched_by_name = Club.where("name like ?", "%#{search_value}%")
+
+    unless clubs_matched_by_name.empty?
+      nameCriteria = Hash.new
+      nameCriteria[:description] = 'Clubes encontrados con termino <strong>' + search_value + '</strong>'
+      nameCriteria[:clubs] = clubs_matched_by_name
+      criteria << nameCriteria
+    end  
+
+    #2nd department AND sport criteria (in case the user entered both)
+
+    search_values_array =search_value.split.compact #converts search value to array
+
+    department = Department.where(:name => search_values_array).first
+    sport = Sport.where(:name => search_values_array).first
+
+    if (department.present? and sport.present?)
+      clubs_matched_by_department_and_sport = Club.by_department(department).by_sport(sport);
+      clubs_matched_by_department_and_sport -= clubs_matched_by_name #this avoids club repetition between criterias
+    end  
+
+
+    unless clubs_matched_by_department_and_sport.blank?
+      sportDepCriteria = Hash.new
+      sportDepCriteria[:description] = 'Clubes encontrados en <strong>' + department.name + '</strong> 
+      con canchas de <strong> ' + sport.name + '</strong>'
+      sportDepCriteria[:clubs] = clubs_matched_by_department_and_sport
+      criteria << sportDepCriteria
+    end
+
+    #this line avoids the method to look up individual sports and department criteria
+    #if the user entered both
+    return criteria if department.present? and sport.present?
+
+    
+    #3rd department-only criteria
+
+    if department.present?
+      clubs_matched_by_department = Club.by_department department
+      clubs_matched_by_department -= clubs_matched_by_name #this avoids club repetition between criterias
+
+    end
+
+    unless clubs_matched_by_department.blank?
+      depCriteria = Hash.new
+      depCriteria[:description] = 'Clubes encontrados en <strong>' + department.name + '</strong>' 
+      depCriteria[:clubs] = clubs_matched_by_department
+      criteria << depCriteria
+    end      
+
+    #4th sport-only criteria
+
+    if sport.present?
+      clubs_matched_by_sport = Club.by_sport sport
+      clubs_matched_by_sport -= clubs_matched_by_name #this avoids club repetition between criterias
+    end
+
+    unless clubs_matched_by_sport.blank?
+      sportCriteria = Hash.new
+      sportCriteria[:description] = 'Clubes encontrados con canchas de <strong>' + sport.name + '</strong>' 
+      sportCriteria[:clubs] = clubs_matched_by_sport
+      criteria << sportCriteria
+    end      
+
+    criteria
+
+
   end
 
 end

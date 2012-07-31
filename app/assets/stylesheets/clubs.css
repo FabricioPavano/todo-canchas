@@ -13,12 +13,6 @@
   font-family: 'Simonetta', cursive;
 }
 
-
-.controls{
-
-  
-
-}
  
 .pics {  
     padding: 0;  
@@ -106,6 +100,13 @@
   float:right;
   bottom:15px;
 
+}
+
+.index-title{
+
+  color: rgb(166, 136, 37);
+  font-size: 2em;
+   
 }
 
 

@@ -1,35 +1,47 @@
-= @prueba
 - model_class = Club.new.class
 
 .row
   .span8.offset1
-    %h1.csfont 
-      Listado de Clubs
-    %hr
+    -if @criteria.blank?
+      %span.csfont.index-title 
+        Lo sentimos no hemos encontrado ningun club 
+        -unless params['search-value'].blank?
+          != 'con <strong>' + params['search-value'] + '</strong>' 
+    -else
+    -@criteria.each do |criteria|
+      %span.csfont.index-title
+        !=criteria[:description]
+        %hr
+      -criteria[:clubs].each do |club|
+        .row
+          .span8.club-item
+            %ul.thumbnails.index-pic
+              %li.span2
+                .thumbnail
+                  =image_tag club.pictures.first.picture_url(:thumb).to_s unless club.pictures.empty?
+                  =image_tag 'default.jpg' if club.pictures.empty?
+            .row
+              .span2.item-name
+                %h2.csfont2
+                  = link_to(truncate(club.name, :length => 30, :separator => ' '),club) 
+                  %small
+                    ='(' + club.department.name + ')'
+              .span2.item-info
+                %ul
+                  %li
+                    %h4
+                      = titleize_array(club.courts_types).to_sentence(:two_words_connector => ' y ',:last_word_connector => ' y ')         
+                  %li
+                    %h4
+                      = 'Tel: ' + club.phone_number  
+
+
+    /   != "de <strong> #{ @criteria[:department] } </strong>" if @criteria.has_key?(:department)
+    /   != "con canchas de <strong> #{@criteria[:sport]} </strong>:" if @criteria.has_key?(:sport) 
     
--@clubs.each do |club|
-  .row
-    .span8.offset1.club-item
-      %ul.thumbnails.index-pic
-        %li.span2
-          .thumbnail
-            =image_tag club.pictures.first.picture_url(:thumb).to_s unless club.pictures.empty?
-            =image_tag 'default.jpg' if club.pictures.empty?
-      .row
-        .span2.item-name
-          %h2.csfont2
-            = link_to(truncate(club.name, :length => 30, :separator => ' '),club) 
-            %small
-              ='(' + club.department.name + ')'
-        .span2.item-info
-          %ul
-            %li
-              %h4
-                = titleize_array(club.courts_types).to_sentence(:two_words_connector => ' y ',:last_word_connector => ' y ')         
-            %li
-              %h4
-                = 'Tel: ' + club.phone_number  
+/ -unless @clubs.empty?    
+/   -@clubs.each do |club|
 
 
 
-  
+/   
