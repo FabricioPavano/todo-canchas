@@ -13,6 +13,9 @@
   font-family: 'Simonetta', cursive;
 }
 
+.csfont3{
+  font-family: 'Holtwood One SC', serif;
+}
  
 .pics {  
     padding: 0;  
@@ -43,10 +46,29 @@
 
 
 
-.container {
+/* Search template*/
 
-  /*    background-cyellow rgb(220,234,244) ;*/
-  /*height: 600px*/
+/*.extra-touch {
+  
+  background-color: #D0E8F4;
+  color: #6285C7;
+
+}*/
+
+.brown-well{
+    background-color: #ffcb40;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+}
+
+.search-help{
+
+  font-size: 1.2em;
+  color: #A68825;
 
 }
 
