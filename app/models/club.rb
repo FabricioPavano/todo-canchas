@@ -6,7 +6,7 @@ class Club < ActiveRecord::Base
   #associations
   belongs_to :department
   has_many :courts, :dependent => :destroy
-  has_many :pictures 
+  has_many :pictures, :dependent => :destroy 
 
   accepts_nested_attributes_for :courts, allow_destroy: true
 

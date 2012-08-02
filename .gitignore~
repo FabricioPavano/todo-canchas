@@ -15,6 +15,6 @@
 /tmp
 /config/database.yml
 
-# Ignore Uploads (they are seed data)
+# Ignore Uploads
 
 /public/uploads/*

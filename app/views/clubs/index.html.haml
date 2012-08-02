@@ -33,7 +33,7 @@
                       = titleize_array(club.courts_types).to_sentence(:two_words_connector => ' y ',:last_word_connector => ' y ')         
                   %li
                     %h4
-                      = 'Tel: ' + club.phone_number  
+                      = club.address + ' (' + club.phone_number + ')'  
 
 
     /   != "de <strong> #{ @criteria[:department] } </strong>" if @criteria.has_key?(:department)
