@@ -6,7 +6,7 @@
 - model_class = @club.class
 
 .row
-  .span8.offset1
+  .span10
     .page-header.alert.alert-info
 
       %h1
@@ -17,30 +17,50 @@
 
 
     .row
-      .span7.show-club-info-div
+      .span10.show-club-info-div
         %fieldset
           %legend
             Informacion de Contacto
-        
+          -if @club.pictures.present?
+            .span6.show-pictures
+              .pics
+                -@club.pictures.each_with_index do |picture, index|  
+                  =image_tag picture.picture_url(:medium_size), :size => '400x300'
+
           %h3.gray
             Direccion:
           %h4
-            =@club.address
+            %ul
+              %li
+                =@club.address
 
           %br  
 
           %h3.gray
             Telefono:
           %h4
-            =@club.phone_number    
+            %ul
+              %li
+                =@club.phone_number    
+
+          %br       
+
+          %h3.gray
+            Horarios:
+          %h4
+            %ul
+              %li
+                9 - 22hs
+
 
           %br
           %br  
+          %br
 
         -if @club.has_courts?
           %fieldset
             %legend
-              Canchas: 
+              Cantidad de canchas: 
 
             %h4
               %ul
@@ -70,16 +90,3 @@
               #map_canvas{:style => "width:550px; height:400px"}
 
     
-
-
-        -if @club.pictures.present?
-          %fieldset
-            %legend
-              Fotos      
-
-            %br
-
-            .pics
-              -@club.pictures.each_with_index do |picture, index|  
-                =image_tag picture.picture_url(:medium_size), :size => '400x300'
-

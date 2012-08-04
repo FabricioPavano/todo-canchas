@@ -1,6 +1,14 @@
 
 
 
+- Arreglar Search Template, los colores estan muy mal
+
+- Arreglar Index Template, las fotos podrian ser mucho mas grandes
+
+- DONE || Cambiar la foto que no se ve bien
+
+- DONE || Arreglar Show Template, las fotos podrian ir al lado de la info de contacto
+
 
 - DONE || INTEGRAR GOOGLE MAPS AL SITIO
   - DONE || al crear nuevo club
@@ -18,7 +26,6 @@
   por el momento lo unico que mostraria es la cantidad de canchas de cada deporte
   mas adelante otras informaciones de cada cancha, ej futbol 5, 6 o 7
 
-- Arreglar Show Template, el mapa y las fotos deberian tener el mismo tamano
 
 
 - AGREGAR SLIDESHOW DE THUMB IMAGES EN SEARCH TEMPLATE (EN HERO UNIT?)
