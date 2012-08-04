@@ -1,5 +1,8 @@
 class ClubsController < ApplicationController
   
+  
+
+
   # GET /
   def search
   end
@@ -10,8 +13,6 @@ class ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
-    
-    #criteria = detect_search_criteria(params['search-value'])
 
     @criteria = Club.search params['search-value']
 
@@ -131,5 +132,8 @@ class ClubsController < ApplicationController
 
 
   end
+
+  def pruebas
+  end  
 
 end

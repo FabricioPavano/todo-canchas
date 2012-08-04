@@ -3,7 +3,7 @@ Todocanchas::Application.routes.draw do
   root :to => 'clubs#search'
 
   get "admin" => "admin/clubs#index"
-  get "prueba" => "admin/clubs#prueba"
+  get "pruebas" => "clubs#pruebas"
 
 
 

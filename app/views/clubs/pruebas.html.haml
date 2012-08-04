@@ -1,0 +1,9 @@
+  
+%script{'src'=> "http://maps.googleapis.com/maps/api/js?sensor=false"}
+=content_for :javascript_includes do
+  =javascript_include_tag '/assets/optional/google.maps.js'
+
+
+
+
+  #map_canvas{:style => "width:500px; height:400px"}

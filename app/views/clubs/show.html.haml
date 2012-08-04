@@ -1,3 +1,8 @@
+%script{'src'=> "http://maps.googleapis.com/maps/api/js?sensor=false"}
+=content_for :javascript_includes do
+  =javascript_include_tag '/assets/optional/google.maps.js'
+
+
 - model_class = @club.class
 
 .row
@@ -31,6 +36,21 @@
 
           %br
           %br  
+
+        
+
+
+        -if @club.coords.present?
+          / here we put the coords hidden for the javascript functions to use it
+          =hidden_field_tag 'coords', @club.coords
+          %fieldset
+            %legend
+              Ubicacion      
+            %br
+              #map_canvas{:style => "width:550px; height:400px"}
+
+    
+
 
         -if @club.pictures.present?
           %fieldset

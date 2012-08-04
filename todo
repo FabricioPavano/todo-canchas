@@ -3,18 +3,31 @@
 brazil 341 delta gnc local 5
 
 
-- DONE || MEJORAR SEARCH TEMPLATE
 
-- CREAR SEED DATA
-  - Objetivo: DONE || 15 clubs realistas
-              DONE || 15 fotos distintas en total
-              hace que git ignore la carpeta uploads
+- INTEGRAR GOOGLE MAPS AL SITIO
+  - DONE || al crear nuevo club
+  - DONE || al editar un club
+  - DONE || al ver un club (show template)
+  - DONE || cargar coordenadas en seed data
 
-- CREAR SECCION CON MAPA
+- arreglar busquedas para que en ningun caso tire error
+  actualmente lo tira por ejemplo al poner buscar sin ningun valor
+
+- debajo de el fieldset Informacion de contacto en show tamplate
+  agregar un fieldset 'canchas'
+  por el momento lo unico que mostraria es la cantidad de canchas de cada deporte
+  mas adelante otras informaciones de cada cancha, ej futbol 5, 6 o 7
 
 - AGREGAR SLIDESHOW DE THUMB IMAGES EN SEARCH TEMPLATE (EN HERO UNIT?)
 
 - IMPLEMENTAR PAGINADOR DE CLUBES      
+
+- DONE || MEJORAR SEARCH TEMPLATE
+
+- DONE || CREAR SEED DATA
+  - Objetivo: DONE || 15 clubs realistas
+              DONE || 15 fotos distintas en total
+              DONE || hace que git ignore la carpeta uploads
 
 - DONE || NO DEBE MOSTRAR SECCION FOTOS SI NO TIENE FOTOS UN CLUB
 

@@ -36,6 +36,8 @@ cl.address = 'Avenida Boulogne Sur Mer 1230'
 cl.department_id = Department.find_by_name('Mendoza').id 
 cl.phone_number = 4380124
 cl.tenis_quantity = 6
+cl.coords = "-32.89776620,-68.86353819999999"
+
 
 if File.exists?('pictures/ten-img1.jpg')
    cl.pictures.build picture: File.new('pictures/ten-img1.jpg')
@@ -56,6 +58,7 @@ cl.address = 'Boulogne Sur Mer 220'
 cl.department_id = Department.find_by_name('Mendoza').id 
 cl.phone_number = 4237125
 cl.tenis_quantity = 8
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/ten-img1.jpg')
    cl.pictures.build picture: File.new('pictures/ten-img2.jpg')
@@ -76,6 +79,7 @@ cl.address = 'J. Paso 4463'
 cl.department_id = Department.find_by_name('Maipu').id 
 cl.phone_number = 4394857
 cl.tenis_quantity = 3
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/ten-img3.jpg')
    cl.pictures.build picture: File.new('pictures/ten-img3.jpg')
@@ -93,6 +97,7 @@ cl.address = 'Vieja canameda 2363'
 cl.department_id = Department.find_by_name('Lujan').id 
 cl.phone_number = 4395715
 cl.tenis_quantity = 2
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/ten-img4.jpg')
    cl.pictures.build picture: File.new('pictures/ten-img4.jpg')
@@ -114,6 +119,7 @@ cl.address = 'Zapiola 366'
 cl.department_id = Department.find_by_name('Guaymallen').id 
 cl.phone_number = 4343034
 cl.futbol_quantity = 2
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/ten-img5.jpg')
    cl.pictures.build picture: File.new('pictures/fut-img3.jpg')
@@ -133,6 +139,7 @@ cl.address = 'San francisco del monte 1665'
 cl.department_id = Department.find_by_name('Godoy Cruz').id 
 cl.phone_number = 2615786983
 cl.futbol_quantity = 1
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/fut-img2.jpg')
    cl.pictures.build picture: File.new('pictures/fut-img2.jpg')
@@ -151,6 +158,7 @@ cl.address = 'Independencia 310'
 cl.department_id = Department.find_by_name('Godoy Cruz').id 
 cl.phone_number = 153681421
 cl.futbol_quantity = 1
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/fut-img1.jpg')
    cl.pictures.build picture: File.new('pictures/fut-img1.jpg')
@@ -170,6 +178,7 @@ cl.address = 'Bartolome Mitre 293'
 cl.department_id = Department.find_by_name('Lujan').id 
 cl.phone_number = 153457887
 cl.futbol_quantity = 1
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/fut-img4.jpg')
    cl.pictures.build picture: File.new('pictures/fut-img4.jpg')
@@ -188,6 +197,7 @@ cl.address = 'Roque Saenz Pena 143'
 cl.department_id = Department.find_by_name('Lujan').id 
 cl.phone_number = 4298934
 cl.futbol_quantity = 2
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/fut-img4.jpg')
    cl.pictures.build picture: File.new('pictures/fut-img5.jpg')
@@ -209,6 +219,7 @@ cl.address = 'Quintana 235'
 cl.department_id = Department.find_by_name('Godoy Cruz').id 
 cl.phone_number = 4243907
 cl.paddle_quantity = 4
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/pad-img1.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img1.jpg')
@@ -228,6 +239,7 @@ cl.address = 'C W Lencinas 333'
 cl.department_id = Department.find_by_name('Mendoza').id 
 cl.phone_number = 4297141
 cl.paddle_quantity = 4
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/pad-img2.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img2.jpg')
@@ -247,6 +259,7 @@ cl.address = 'Andrade 271'
 cl.department_id = Department.find_by_name('Guaymallen').id 
 cl.phone_number = 155437972
 cl.paddle_quantity = 4
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/pad-img3.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img3.jpg')
@@ -267,6 +280,7 @@ cl.address = 'Dr. Moreno 1986'
 cl.department_id = Department.find_by_name('Las Heras').id 
 cl.phone_number = 2614484705
 cl.paddle_quantity = 4
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/pad-img4.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img4.jpg')
@@ -289,6 +303,7 @@ cl.phone_number = 4360384
 cl.tenis_quantity = 4
 cl.futbol_quantity = 2
 cl.paddle_quantity = 4
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/ten-img5.jpg')
    cl.pictures.build picture: File.new('pictures/ten-img5.jpg')
@@ -310,6 +325,7 @@ cl.department_id = Department.find_by_name('Godoy Cruz').id
 cl.phone_number = 4360384
 cl.futbol_quantity = 2
 cl.paddle_quantity = 4
+cl.coords = "-32.89776620,-68.86353819999999"
 
 if File.exists?('pictures/fut-img6.jpg')
    cl.pictures.build picture: File.new('pictures/fut-img6.jpg')
