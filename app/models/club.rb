@@ -68,6 +68,10 @@ class Club < ActiveRecord::Base
 
   #Custom Functions
 
+  def has_courts?
+    return courts_types.present?
+  end
+
   def has_futbol_courts?
     courts_types.include? 'futbol'
   end

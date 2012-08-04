@@ -37,7 +37,27 @@
           %br
           %br  
 
-        
+        -if @club.has_courts?
+          %fieldset
+            %legend
+              Canchas: 
+
+            %h4
+              %ul
+                -if @club.has_futbol_courts?
+                  %li
+                    =@club.futbol_quantity
+                    canchas de Futbol
+                -if @club.has_tenis_courts?
+                  %li
+                    =@club.tenis_quantity
+                    canchas de tenis
+                -if @club.has_paddle_courts?
+                  %li
+                    =@club.paddle_quantity
+                    canchas de paddle        
+        %br
+        %br          
 
 
         -if @club.coords.present?

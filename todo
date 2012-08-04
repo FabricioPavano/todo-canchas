@@ -1,22 +1,25 @@
 
 
-brazil 341 delta gnc local 5
 
 
-
-- INTEGRAR GOOGLE MAPS AL SITIO
+- DONE || INTEGRAR GOOGLE MAPS AL SITIO
   - DONE || al crear nuevo club
   - DONE || al editar un club
   - DONE || al ver un club (show template)
   - DONE || cargar coordenadas en seed data
 
-- arreglar busquedas para que en ningun caso tire error
+- DONE || arreglar busquedas para que en ningun caso tire error
   actualmente lo tira por ejemplo al poner buscar sin ningun valor
 
-- debajo de el fieldset Informacion de contacto en show tamplate
+- DONE || Agregar busqueda de todas las canchas en caso de enviarse termino de busqueda vacio
+
+- DONE || debajo de el fieldset Informacion de contacto en show tamplate
   agregar un fieldset 'canchas'
   por el momento lo unico que mostraria es la cantidad de canchas de cada deporte
   mas adelante otras informaciones de cada cancha, ej futbol 5, 6 o 7
+
+- Arreglar Show Template, el mapa y las fotos deberian tener el mismo tamano
+
 
 - AGREGAR SLIDESHOW DE THUMB IMAGES EN SEARCH TEMPLATE (EN HERO UNIT?)
 
