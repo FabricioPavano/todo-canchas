@@ -48,15 +48,15 @@
 
 /* Search template*/
 
-/*.extra-touch {
+.extra-touch {
   
-  background-color: #D0E8F4;
-  color: #6285C7;
+  background-color: #7ad0c2;
+  color: white;
 
-}*/
+}
 
 .brown-well{
-    background-color: #ffcb40;
+    background-color: #7ad0c2;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
@@ -69,6 +69,22 @@
 
   font-size: 1.2em;
   color: #A68825;
+
+}
+
+
+/* Show Template */
+
+.show-pictures{
+
+  float:right;
+
+}
+
+#map_canvas{
+
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -120,8 +136,9 @@
 
   position:relative;
   float:right;
-  bottom:15px;
-
+  bottom:5px;
+  width: 200px;
+  height: 150px;
 }
 
 .index-title{

@@ -1,5 +1,9 @@
+require 'util.rb'
+
 class Club < ActiveRecord::Base
   
+
+
   attr_accessible :address, :name, :phone_number, :department_id, :futbol_quantity, :tenis_quantity, :paddle_quantity, :courts_types, :photo, :coords
   attr_accessor   :futbol_quantity, :tenis_quantity, :paddle_quantity, :courts_types, :virtual
 

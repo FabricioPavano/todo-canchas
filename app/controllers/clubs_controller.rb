@@ -1,7 +1,8 @@
+
+require 'util.rb'
 class ClubsController < ApplicationController
   
   
-
 
   # GET /
   def search
@@ -14,7 +15,10 @@ class ClubsController < ApplicationController
   # GET /clubs.json
   def index
 
-    @criteria = Club.search params['search-value']
+    # we look for synonyms or misspelled words in search string
+    search_value = look_up_synonyms params['search-value'] 
+
+    @criteria = Club.search search_value
 
     # @criteria = criteria[:view]
 
@@ -95,45 +99,70 @@ class ClubsController < ApplicationController
     end
   end
 
-  # there are three possible search criterias 
-  # 1: Clubs in a certain department
-  # 2: Clubs which has certain court types: i.e futbol, tenis
-  # 3: Clubs with a certain name
-  # this method checks for the former two
-  # returns Hash with department and sport ids if any 
-  def detect_search_criteria search_value
-
-    search_values_array =search_value.split.compact #converts search value to array
-
-    # hash used for searching (contains ids)
-    criteria = {} 
-
-    # hash used to send to view (contains names)
-    criteria_view = {}
-
-    department = Department.where(:name => search_values_array).first
-    unless department.blank?
-      criteria[:department] = department.id
-      criteria_view[:department] = department.name 
-      search_values_array.delete(department.name.downcase)
-    end
-
-    sport = Sport.where(:name => search_values_array).first
-    unless sport.blank?
-      criteria[:sport] = sport.id 
-      criteria_view[:sport] = sport.name
-      search_values_array.delete(sport.name.downcase)
-    end
-
-    criteria[:name] = search_values_array.join unless search_values_array.blank?
-    criteria[:view] = criteria_view
-
-    criteria
-
-
-  end
 
   def pruebas
   end  
+
+  
+
+  def look_up_synonyms search_value
+    
+    search_value.downcase!  
+
+    synonyms_hash =
+    {
+      'futbol' => 'futbol 5',
+      'paddle' => 'padel',
+      'tenis'  => 'tennis',
+      'guaymallen' => 'guaimallen'
+    }
+
+    # Search Values Array
+    sva = search_value.split.compact #converts search value to array
+
+    
+    # looks for 'futbol 5' kind of strings in array an joins values
+    if sva.include?('futbol')
+      if sva[sva.index('futbol') + 1].present?
+
+        following_word = sva[sva.index('futbol') + 1]
+
+        # If following word to futbol is a number we join both array indexes
+        if following_word.numeric?
+
+          joinedString = 'futbol ' + following_word  
+          sva[sva.index('futbol')..sva.index('futbol')+1 ] = joinedString  
+
+        end  
+      end
+    end  
+
+
+
+
+    # looks for synonyms in each word and replaces it  
+    sva.map! do |word|
+      if synonyms_hash.value? word    
+        word = synonyms_hash.key word  
+      end   
+      word
+    end
+
+    
+
+    sva.join(' ')
+
+  end
+
+
+  
+
+
+
+
+
+  
+
+
 
 end
