@@ -153,9 +153,19 @@ class Club < ActiveRecord::Base
 
   def self.search search_value
 
-    return if search_value.blank?
-
     criteria = []
+
+    if search_value.blank?
+
+      noCriteria = Hash.new
+      noCriteria[:description] = 'No se ha enviado criterio de busqueda <br>
+      Listado de <strong> todos </strong> los clubs: '
+      noCriteria[:clubs] = Club.all
+      return criteria << noCriteria
+
+    end  
+
+    
 
     #first checks if the search-value matches a club name
 
