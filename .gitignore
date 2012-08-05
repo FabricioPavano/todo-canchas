@@ -18,3 +18,12 @@
 # Ignore Uploads (they are seed data)
 
 /public/uploads/*
+
+
+# Ignore .rvmrc
+.rvmrc
+
+# Ignore todo list
+
+todo
+

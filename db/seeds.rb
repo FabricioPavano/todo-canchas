@@ -155,7 +155,7 @@ cl.save
 cl = Club.new
 cl.name = 'Independencia Futbol'
 cl.address = 'Independencia 310'
-cl.department_id = Department.find_by_name('Godoy Cruz').id 
+cl.department_id = Department.find_by_name('Maipu').id 
 cl.phone_number = 153681421
 cl.futbol_quantity = 1
 cl.coords = "-32.89776620,-68.86353819999999"
@@ -175,7 +175,7 @@ cl.save
 cl = Club.new
 cl.name = 'El Pasillo Futbol 5'
 cl.address = 'Bartolome Mitre 293'
-cl.department_id = Department.find_by_name('Lujan').id 
+cl.department_id = Department.find_by_name('Maipu').id 
 cl.phone_number = 153457887
 cl.futbol_quantity = 1
 cl.coords = "-32.89776620,-68.86353819999999"

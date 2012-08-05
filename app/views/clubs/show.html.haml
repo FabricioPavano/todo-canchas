@@ -27,30 +27,31 @@
                 -@club.pictures.each_with_index do |picture, index|  
                   =image_tag picture.picture_url(:medium_size), :size => '400x300'
 
-          %h3.gray
-            Direccion:
-          %h4
-            %ul
-              %li
-                =@club.address
+          .span3          
+            %h3.gray
+              Direccion:
+            %h4
+              %ul
+                %li
+                  =@club.address
 
-          %br  
+            %br  
 
-          %h3.gray
-            Telefono:
-          %h4
-            %ul
-              %li
-                =@club.phone_number    
+            %h3.gray
+              Telefono:
+            %h4
+              %ul
+                %li
+                  =@club.phone_number    
 
-          %br       
+            %br       
 
-          %h3.gray
-            Horarios:
-          %h4
-            %ul
-              %li
-                9 - 22hs
+            %h3.gray
+              Horarios:
+            %h4
+              %ul
+                %li
+                  9 - 22hs
 
 
           %br
