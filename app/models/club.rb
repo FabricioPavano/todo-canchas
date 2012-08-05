@@ -113,9 +113,9 @@ class Club < ActiveRecord::Base
   #Can be refactored
 
   def create_courts
-      futbol = Sport.where(:name => 'Futbol').first
-      tenis  = Sport.where(:name => 'Tenis').first
-      paddle = Sport.where(:name => 'Paddle').first
+      futbol = Sport.where(:name => 'futbol').first
+      tenis  = Sport.where(:name => 'tenis').first
+      paddle = Sport.where(:name => 'paddle').first
 
       # court_quantity '*' indicates how many courts already has
       # @*_quantity indicates how many tha user wants
