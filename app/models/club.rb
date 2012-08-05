@@ -113,7 +113,7 @@ class Club < ActiveRecord::Base
   #Can be refactored
 
   def create_courts
-      futbol = Sport.where(:name => 'futbol').first
+      futbol = Sport.where(:name => 'Futbol').first
       tenis  = Sport.where(:name => 'Tenis').first
       paddle = Sport.where(:name => 'Paddle').first
 
