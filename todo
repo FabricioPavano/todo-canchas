@@ -1,9 +1,12 @@
 
 
+- hacer andar regatas club example!
+- CLONAR DE GITHUB Y VER CUALES SON LOS PASOS NECESARIOS PARA HACERLO ANDAR
+- PROBARLO EN OTRAS COMPUTADORAS PARA VER SI RENDERIZA BIEN
 
-- Arreglar Search Template, los colores estan muy mal
+- IMPLEMENTAR PAGINADOR DE CLUBES      
 
-- Arreglar Index Template, las fotos podrian ser mucho mas grandes
+- DONE || Arreglar Search Template, los colores estan muy mal
 
 - DONE || Cambiar la foto que no se ve bien
 
@@ -28,10 +31,6 @@
 
 
 
-- AGREGAR SLIDESHOW DE THUMB IMAGES EN SEARCH TEMPLATE (EN HERO UNIT?)
-
-- IMPLEMENTAR PAGINADOR DE CLUBES      
-
 - DONE || MEJORAR SEARCH TEMPLATE
 
 - DONE || CREAR SEED DATA
@@ -48,15 +47,14 @@
 - DONE || REALIZAR VIEW DE CLUBS
 
 
-RESOLVER PROBLEMA
 
  - DONE Debo poder obtener cuantas canchas ya estan guardadas en la base de datos para un determinado club 
 
 
-IMPLEMENTAR BUSQUEDA POR DEPARTAMENTO
-- DONE Al hacer un submit con un departamento valido debe dirigirse al action Index
-- DONE El action Index debe traer todos los departamentos y guardarlos en una variable de instancia
-- DONE finalmente se debe renderizar el index template
+- DONE || IMPLEMENTAR BUSQUEDA POR DEPARTAMENTO
+  - DONE Al hacer un submit con un departamento valido debe dirigirse al action Index
+  - DONE El action Index debe traer todos los departamentos y guardarlos en una variable de instancia
+  - DONE finalmente se debe renderizar el index template
 
 
 FUNCIONALIDAD AUTO DETECTAR DEPARTAMENTO
@@ -67,16 +65,4 @@ FUNCIONALIDAD AUTO DETECTAR DEPARTAMENTO
 - DONE en caso afirmativo enviar el input name como departamento
 
 
-  / .well.club-item
-      /   .span1.index-pic
-      /     =image_tag club.pictures.first.picture_url(:thumb)
-      /   .span2.courts_types
-      /     %h2.csfont2
-      /       = club.courts_types.to_sentence(:two_words_connector => ' y /',:last_word_connector => ' y ')   
-      /   .span2
-      /   %h2.csfont2
-      /     = link_to club.name, club
-      /     %span.gray
-      /       %small
-      /         = '(' + club.department.name + ')'
                    

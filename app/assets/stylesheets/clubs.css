@@ -68,8 +68,13 @@
 .search-help{
 
   font-size: 1.2em;
-  color: #A68825;
+  color: gray;
 
+}
+
+.black-examples{
+
+  color:black;
 }
 
 
