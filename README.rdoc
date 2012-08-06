@@ -16,7 +16,7 @@ you can access backend functionality through /admin url
 
 
 
-*note*: this is a feature-reduced of the real project hosted on a private repo in bitbucket.
+*note*: this is a feature-reduced version of the real project hosted on a private repo in bitbucket.
 
 
 enjoy!
