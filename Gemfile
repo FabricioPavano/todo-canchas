@@ -6,7 +6,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+# gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "jquery-fileupload-rails"
@@ -51,8 +51,6 @@ group :development do
   gem 'mysql2' if File.open('config/database.yml').read.include? "mysql2"
   gem 'gem-open'
   gem 'hirb'
-
-
 end
 
 # To use ActiveModel has_secure_password
