@@ -2,12 +2,18 @@
 
 Example site for searching Futbol, Padel & Tenis Clubs in Mendoza, Argentina
 
-== to get it working
+== Get it working
 
 1. git://github.com/FabricioPavano/portfolio-project.git
 2. bundle --without development
 3. rake db:migrate 
 4. rake db:seed (important!)
+
+== Backend
+
+you can access backend functionality through /admin url
+
+
 
 
 *note*: this is a feature-reduced of the real project hosted on a private repo in bitbucket.
