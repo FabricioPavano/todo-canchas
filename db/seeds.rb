@@ -43,7 +43,7 @@ cl.save
 ## 2 - Club mendoza 
 
 cl = Club.new;
-cl.name = 'mendoza Tenis Club'
+cl.name = 'Mendoza Tenis Club'
 cl.address = 'Boulogne Sur Mer 220'
 cl.department_id = Department.find_by_name('mendoza').id 
 cl.phone_number = 4237125
@@ -64,7 +64,7 @@ cl.save
 ## 3 - Club maipu 
 
 cl = Club.new;
-cl.name = 'maipu Tenis Club'
+cl.name = 'Maipu Tenis Club'
 cl.address = 'J. Paso 4463'
 cl.department_id = Department.find_by_name('maipu').id 
 cl.phone_number = 4394857
