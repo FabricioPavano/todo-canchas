@@ -1,0 +1,47 @@
+
+/* Select user Type template*/
+
+.select_type_container{
+    
+    position:relative;
+    top:50px;
+    text-align: center;
+
+}
+
+
+.select_type_container .span5{
+
+  height: 400px;
+  padding-top: 60px;
+  border-radius: 15px;
+
+
+}
+
+.right-border{
+
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-right-color: black: 
+
+}
+
+.vertical-line{
+
+  position:relative;
+  /*top:-150px;*/
+  width: 1px;
+  height: 400px;
+  float:right;
+  background-color: black;
+
+
+}
+
+.select_type_container .span5:hover{
+
+  background-color: #cdeb8e;
+
+}
+

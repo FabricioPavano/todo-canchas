@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require twitter/bootstrap
+ *= require font-awesome
  *= require_self
  *= require jquery.ui.all
  *= require jquery.fileupload-ui
@@ -19,3 +20,9 @@
  /* This are needed for google maps to display correctly*/
  html { height: 100% }
  body { height: 100%; margin: 0; padding: 0 }
+
+ .icon-very-large{
+
+  font-size: 4em;
+
+ }

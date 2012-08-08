@@ -1,7 +1,9 @@
-module ApplicationHelper
+class Devise::RegistrationsController < ApplicationController
 
-  # by putting this helpers i can use this device specific 
-  # methods anywhere in the app
+  def new
+    @user = User.new
+  end
+
 
   def resource_name
     :user
@@ -16,4 +18,4 @@ module ApplicationHelper
   end
 
 
-end
+end  

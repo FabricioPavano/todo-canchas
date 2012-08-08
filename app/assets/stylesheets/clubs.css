@@ -1,8 +1,27 @@
 
+/*layout*/
+
+.alert-modif, .notice-modif{
+
+  margin-top: 30px;
+  text-align: center;
+
+}
+
+.white {
+
+  color: white;
+}
+.session{
+  height: 20px
+}
+
 .body {
   font-family: "Helvetica Neue" !important
 
 }
+
+
 
 /* Custom fonts */
 .csfont{
@@ -52,7 +71,7 @@
   
   background-color: #7ad0c2;
   color: white;
-
+  margin-top: 30px
 }
 
 .brown-well{

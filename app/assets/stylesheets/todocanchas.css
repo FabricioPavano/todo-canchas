@@ -1,0 +1,14 @@
+.navbar-inner {
+  background-color: #cdeb8e; /* fallback color, place your own */
+
+ background: #cdeb8e; /* Old browsers */
+ background: -moz-linear-gradient(-45deg,  #cdeb8e 0%, #a5c956 66%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#cdeb8e), color-stop(66%,#a5c956)); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(-45deg,  #cdeb8e 0%,#a5c956 66%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(-45deg,  #cdeb8e 0%,#a5c956 66%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(-45deg,  #cdeb8e 0%,#a5c956 66%); /* IE10+ */
+ background: linear-gradient(135deg,  #cdeb8e 0%,#a5c956 66%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+}
