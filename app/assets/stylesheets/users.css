@@ -27,9 +27,10 @@
 
 }
 
-.select_type_container .span5:visited{
-  color: gray;
+.select_type_container .span5 a:visited{
+  color: gray !important;
 }
+
 
 .center-form {
     float: none;
@@ -40,6 +41,12 @@
 .green{
 
   color:#cdeb8e;
+
+}
+
+form .help-inline{
+
+  display: block !important;
 
 }
 
