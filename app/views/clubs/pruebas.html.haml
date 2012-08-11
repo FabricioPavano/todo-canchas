@@ -1,9 +1,21 @@
   
-%script{'src'=> "http://maps.googleapis.com/maps/api/js?sensor=false"}
-=content_for :javascript_includes do
-  =javascript_include_tag '/assets/optional/google.maps.js'
+.row
+  
 
+  .outter-div
+    .inner-div
+      .div-icon.green-color
+        %i.icon-globe.icon-size
+      .div-text-icon.csfont3.green-color
+        1.Busca una cancha
+    .inner-div
+      .div-icon.green-color
+        %i.icon-search.icon-size
+      .div-text-icon.csfont3.green-color
+        2.Encuentra un turno
+    .inner-div
+      .div-icon.green-color
+        %i.icon-money.icon-size
+      .div-text-icon.csfont3.green-color
+        3.Alquila!
 
-
-
-  #map_canvas{:style => "width:500px; height:400px"}

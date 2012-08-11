@@ -1,10 +1,40 @@
-%h2 Resgistrate!
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
-  .form-actions
-    = f.button :submit, "Sign up"
-= render "devise/shared/links"
+
+
+
+.row  
+  .span6.offset1.gray.center-form
+    %h2.csfont2
+      Registro de usuario Administrador
+    %br
+    %br
+    %h2.csfont3.green   
+      Primer Paso
+    %h2.csfont3.green
+      Datos Personales  
+    %hr
+
+
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'} ) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name, :required => true, :label => t('user.name') , :placeholder => 'Ingresa tu nombre y apellido..', :autofocus => true
+        = f.input :email, :placeholder => 'Ingresa tu e-mail', :required => true, :label => t('user.email')
+        = f.input :password, :required => true, :label => t('user.password')
+        = f.input :password_confirmation, :required => true, :label => t('user.password_confirmation')
+
+        %br
+        %h2.csfont3.green   
+          Segundo Paso
+        %h2.csfont3.green
+          Datos del Club  
+        %hr        
+
+      
+
+
+
+      .row
+        .span6
+          .form-actions
+            = f.button :submit, "Sign up"
+          = render "devise/shared/links"

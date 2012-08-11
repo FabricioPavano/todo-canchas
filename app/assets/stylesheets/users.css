@@ -19,18 +19,35 @@
 
 }
 
-.right-border{
+.select_type_container .span5:hover{
 
-  border-right-style: solid;
-  border-right-width: 3px;
-  border-right-color: black: 
+  background-color: #cdeb8e;
+  text-decoration: none;
+  color: gray;
 
 }
 
-.vertical-line{
+.select_type_container .span5:visited{
+  color: gray;
+}
+
+.center-form {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.green{
+
+  color:#cdeb8e;
+
+}
+
+
+
+/*.vertical-line{
 
   position:relative;
-  /*top:-150px;*/
   width: 1px;
   height: 400px;
   float:right;
@@ -38,10 +55,4 @@
 
 
 }
-
-.select_type_container .span5:hover{
-
-  background-color: #cdeb8e;
-
-}
-
+*/

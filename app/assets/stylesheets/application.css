@@ -21,8 +21,19 @@
  html { height: 100% }
  body { height: 100%; margin: 0; padding: 0 }
 
+
+/* other application css*/
  .icon-very-large{
 
   font-size: 4em;
 
  }
+
+.enlarge{
+
+
+
+  font-size: 30px;
+
+
+}

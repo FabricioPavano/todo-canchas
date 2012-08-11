@@ -1,56 +1,68 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 es:
-  errors:
-    messages:
-      expired: "ha expirado, por favor pida uno nuevo"
-      not_found: "no encontrado"
-      already_confirmed: "ya está confirmada, por favor intente ingresar"
-      not_locked: "no está bloqueada"
-      not_saved:
-        one: "1 error evitó que este %{resource} fuera guardado:"
-        other: "%{count} errores evitaron que este %{resource} fuera guardado:"
-
   devise:
-    failure:
-      already_authenticated: 'Ya está dentro del sistema'
-      unauthenticated: 'Necesita ingresar o registrarse para continuar'
-      unconfirmed: 'Debe confirmar su cuenta para continuar'
-      locked: 'Su cuenta está bloqueada'
-      invalid: 'Correo o contraseña inválidos'
-      invalid_token: 'Ficha de autenticación invalida'
-      timeout: 'Su sesión ha expirado, por favor ingrese nuevamente para continuar'
-      inactive: 'Su cuenta aún no ha sido activada'
-    sessions:
-      signed_in: 'Bienvenido a TodoCanchas!'
-      signed_out: 'Usted ha salido de TodoCanchas'
-    passwords:
-      send_instructions: 'Recibirá un correo electrónico con instrucciones sobre cómo reiniciar su contraseña en unos minutos'
-      updated: 'Su contraseña fue cambiada exitosamente y ha sido ingresado al sistema'
-      updated_not_active: 'Su contraseña se cambió exitosamente'
-      send_paranoid_instructions: "Si su correo electrónico existe en nuestra base de datos, usted recibirá un enlace para reiniciar su contraseña en unos minutos"
     confirmations:
-      send_instructions: 'Usted recibirá un correo electrónico con instrucciones sobre cómo confirmar su cuenta en unos minutos'
-      send_paranoid_instructions: 'Si su correo electrónico existe en nuestra base de datos, usted recibirá un correo con instrucciones sobre cómo confirmar su cuenta en unos minutos'
-      confirmed: 'Su cuenta fue confirmada exitosamente, usted ha sido ingresado al sistema'
-    registrations:
-      signed_up: '¡Bienvenido a Todo Canchas!'
-      signed_up_but_unconfirmed: 'Un mensaje con instrucciones para confirmar su cuenta fue enviado a su correo electrónico. Abra el enlace para activar su cuenta'
-      signed_up_but_inactive: 'Ha ingresado al sistema exitosamente. Pero, no ha podido ingresar porque no ha activado su cuenta'
-      signed_up_but_locked: 'Ha ingresado al sistema exitosamente. Pero, no ha podido ingresar porque su cuenta está bloqueada'
-      updated: 'Usted actualizó su cuenta exitosamente'
-      update_needs_confirmation: "Usted actualizó su cuenta exitosamente, pero necesitamos verificar su cuenta de correo. Por favor revise su correo electrónico y abra el enlace para activar su nueva cuenta de correo electrónico"
-      destroyed: '¡Hasta luego! Su cuenta fue cancelada con éxito, esperamos verle de nuevo pronto. Gracias'
-    unlocks:
-      send_instructions: 'Recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos'
-      unlocked: 'Su cuenta fue desbloqueada con éxito, por favor ingrese al sistema para continuar'
-      send_paranoid_instructions: 'Si su cuenta existe, usted recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos'
-    omniauth_callbacks:
-      success: 'Exitosamente autorizado desde la cuenta %{kind}'
-      failure: 'No se le pudo autorizar en %{kind} debido a "%{reason}"'
+      confirmed: Tu cuenta fue confirmada. Ya iniciaste sesión.
+      send_instructions: Vas a recibir un correo con instrucciones sobre cómo confirmar
+        tu cuenta en unos pocos minutos.
+      send_paranoid_instructions: Si tu correo existe en nuestra base de datos, vas
+        a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos
+        pocos minutos.
+    failure:
+      already_authenticated: Ya has iniciado una sesión.
+      inactive: Tu cuenta aún no ha sido activada.
+      invalid: Contraseña o Correo inválidos.
+      invalid_token: Código de autenticación inválido.
+      locked: Tu cuenta está bloqueada.
+      timeout: Tu sesión expiró, por favor inicia sesión nuevamente para continuar.
+      unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
+      unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
     mailer:
       confirmation_instructions:
-        subject: 'Instrucciones de Confirmación'
+        subject: Instrucciones de confirmación
       reset_password_instructions:
-        subject: 'Instrucciones de reinicio de contraseña'
+        subject: Instrucciones de recuperación de contraseña
       unlock_instructions:
-        subject: 'Instrucciones de desbloqueo'
+        subject: Instrucciones para desbloquear
+    omniauth_callbacks:
+      failure: No has sido autorizado en la cuenta %{kind} porque "%{reason}".
+      success: Has sido autorizado satisfactoriamente de la cuenta %{kind}.
+    passwords:
+      send_instructions: Vas a recibir un correo con instrucciones sobre cómo resetear
+        tu contraseña en unos pocos minutos.
+      send_paranoid_instructions: Si tu correo existe en nuestra base de datos, vas
+        a recibir un correo con instrucciones sobre cómo resetear tu contraseña en
+        tu bandeja de entrada.
+      updated: Tu contraseña fue cambiada. Ya iniciaste sesión.
+      updated_not_active: Tu contraseña fue cambiada.
+    registrations:
+      destroyed: Fue grato tenerte con nosotros. Tu cuenta fue cancelada.
+      signed_up: Bienvenido. Tu cuenta fue creada.
+      signed_up_but_inactive: Tu cuenta ha sido creada correctamente. Sin embargo,
+        no hemos podido iniciar la sesión para que tu cuenta aún no está activada.
+      signed_up_but_locked: Tu cuenta ha sido creada correctamente. Sin embargo, no
+        hemos podido iniciar la sesión para que tu cuenta está bloqueada.
+      signed_up_but_unconfirmed: Se ha enviado un mensaje con un enlace de confirmación
+        a tu correo electrónico. Abre el enlace para activar tu cuenta.
+      update_needs_confirmation: Has actualizado tu cuenta correctamente, pero es
+        necesario confirmar tu nuevo correo electrónico. Por favor, comprueba tu correo
+        y sigue el enlace de confirmación para finalizar la comprobación del nuevo
+        correo eletrónico.
+      updated: Tu cuenta fue actualizada.
+    sessions:
+      signed_in: Sesión iniciada.
+      signed_out: Sesión finalizada.
+    unlocks:
+      send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en
+        unos pocos minutos.
+      send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones
+        para desbloquear tu cuenta en unos pocos minutos.
+      unlocked: Tu cuenta fue desbloqueada. Ya iniciaste sesión.
+  errors:
+    messages:
+      already_confirmed: ya fue confirmado, por favor intenta iniciar sesión
+      expired: ha expirado, por favor solicita una nueva
+      not_found: no se encontró
+      not_locked: no estaba bloqueado
+      not_saved:
+        one: ! 'Un error ocurrió al tratar de guardar %{resource}:'
+        other: ! '%{count} errores ocurrieron al tratar de guardar %{resource}:'

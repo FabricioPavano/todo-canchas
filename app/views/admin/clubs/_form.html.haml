@@ -1,6 +1,7 @@
 %script{'src'=> "http://maps.googleapis.com/maps/api/js?sensor=false"}
 =content_for :javascript_includes do
-  =javascript_include_tag '/assets/optional/google.maps.js'
+  =javascript_include_tag '/assets/optional/google.util.maps.js'
+  =javascript_include_tag '/assets/optional/google.form.maps.js'
 
 
 = simple_form_for [:admin, @club], :html => { :class => 'form-horizontal', :multipart => true } do |f|
