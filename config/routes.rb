@@ -7,7 +7,7 @@ Todocanchas::Application.routes.draw do
 
   get "admin" => "admin/clubs#index"
   get "pruebas" => "clubs#pruebas"
-
+  get "clubs/fetchByDepartment" => 'clubs#fetchByDepartment'
 
 
   namespace :admin do
@@ -27,6 +27,7 @@ Todocanchas::Application.routes.draw do
   get "upload/:club_id" => "pictures#upload"
   get "departments/fetch"
   get "clubs/search"
+
 
 
 end

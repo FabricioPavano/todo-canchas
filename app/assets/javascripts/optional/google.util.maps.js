@@ -73,3 +73,26 @@ function buildLatLng(latlngStr) {
 };
 
 
+//marks every club of a given department
+
+function markDepartmentClubs(department){
+
+  department = Department.find_by_name(department)
+
+
+}
+
+function getClubs(department){
+  
+  $.getJSON('clubs/fetchByDepartment', {'department':department}d, function(){
+
+    
+
+    
+  })
+
+}
+
+
+
+

@@ -65,5 +65,17 @@ $(document).ready(function(){
     fx: 'scrollDown',
     timeout: 4000
   });
+
+  $('.dev').click(function(){
+
+    alert('funcionalidad en desarrollo')
+
+  })
+
+
+
+  
+
+
     
 })

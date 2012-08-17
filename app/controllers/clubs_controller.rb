@@ -103,7 +103,17 @@ class ClubsController < ApplicationController
   def pruebas
   end  
 
-  
+  # fetches all clubs of a given department and returns them in JSON
+  def fetchByDepartment
+
+    debugger
+
+    dep = Department.find_by_name(params['department'])
+    @clubs = Club.by_department(dep)
+
+    render json: @clubs
+    
+  end  
 
   def look_up_synonyms search_value
     

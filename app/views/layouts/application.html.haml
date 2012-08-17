@@ -30,9 +30,17 @@
             %h2.csfont3.white
               TC.COM
 
+             
+
           %ul.nav.pull-right
-            
+          
+
             -if user_signed_in?
+              %li
+                %a
+                  =current_user.name
+
+
               %li
                 %a
                   =button_to 'Cerrar Sesion', {action: 'destroy', :controller => 'devise/sessions'},{:form => {:class => 'session'}, :method => 'delete', :class => 'btn'}       

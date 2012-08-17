@@ -4,11 +4,9 @@
 .row  
   .span6.offset1.gray.center-form
     %h2.csfont2
-      Registro de usuario Administrador
+      Registro de usuario Regular
     %br
     %br
-    %h2.csfont3.green   
-      Primer Paso
     %h2.csfont3.green
       Datos Personales  
     %hr
@@ -22,19 +20,11 @@
         = f.input :password, :required => true, :label => t('user.password')
         = f.input :password_confirmation, :required => true, :label => t('user.password_confirmation')
 
-        %br
-        %h2.csfont3.green   
-          Segundo Paso
-        %h2.csfont3.green
-          Datos del Club  
-        %hr        
-
-      
 
 
 
       .row
         .span6
           .form-actions
-            = f.button :submit, "Sign up"
+            = f.button :submit, "Registrate!"
           = render "devise/shared/links"
