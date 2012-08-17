@@ -15,6 +15,7 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'devise'
 
 
 
@@ -26,8 +27,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem "bootstrap-sass-rails"
   gem 'twitter-bootstrap-rails'
-
-
+  gem 'font-awesome-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
  
@@ -47,10 +47,10 @@ end
 group :development do
   #solo para el rodri :)
   gem 'sqlite3' if File.open('config/database.yml').read.include? "sqlite3"
-  #solo para el fabri :S
-  gem 'mysql2' if File.open('config/database.yml').read.include? "mysql2"
   gem 'gem-open'
   gem 'hirb'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 # To use ActiveModel has_secure_password

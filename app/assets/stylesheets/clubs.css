@@ -1,8 +1,30 @@
 
+/*layout*/
+
+
+
+
+.alert-modif, .notice-modif{
+
+  margin-top: 30px;
+  text-align: center;
+
+}
+
+.white {
+
+  color: white;
+}
+.session{
+  height: 20px
+}
+
 .body {
   font-family: "Helvetica Neue" !important
 
 }
+
+
 
 /* Custom fonts */
 .csfont{
@@ -48,13 +70,92 @@
 
 /* Search template*/
 
-.extra-touch {
-  
-  background-color: #7ad0c2;
-  color: white;
+.inner-span{
+
+  height: 550px
 
 }
 
+
+.extra-touch {
+  
+  height:160px;
+  background-color: #7ad0c2;
+  color: white;
+  margin-top: 20px
+}
+
+#root-map-canvas{
+
+  background-color: #7ad0c2;
+  color: white;
+  margin-top: 20px;
+
+}
+
+.two-columns-row{
+
+  background-color: white;
+  margin-top: 10px
+
+}
+
+
+
+.inner-span div{
+
+  margin-left: 0px;
+  
+}
+
+.search-tpl-icon{
+
+  margin-top:60px;
+  font-size: 6em;
+  color:#78992c;  
+
+}
+
+.green-color{
+
+  color:#78992C;
+}
+
+.search-info{
+
+  margin-top:10px;
+  /*height:80px;*/
+
+}
+
+
+.icon-size{
+  font-size: 7em;
+}
+
+
+.div-icon{
+  position: relative;
+  height: 100px;
+  width: 200px; 
+  line-height: 100px;
+  text-align: center;
+}
+
+.div-text-icon{
+
+  position: relative;
+  height: 50px;
+  width: 200px; 
+  text-align: center;
+  font-size: 1.8em 
+
+}
+
+.inner-div{
+  width:33%;
+  float:left;
+}
 .brown-well{
     background-color: #7ad0c2;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -68,7 +169,7 @@
 .search-help{
 
   font-size: 1.2em;
-  color: gray;
+  color: white;
 
 }
 
@@ -96,6 +197,11 @@
 
 /* Index template*/
 
+
+#club-index{
+
+  margin-top: 50px;
+}
 
 .courts_types{
 

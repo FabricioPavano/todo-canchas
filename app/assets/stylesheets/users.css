@@ -1,0 +1,65 @@
+
+/* Select user Type template*/
+
+.select_type_container{
+    
+    position:relative;
+    top:50px;
+    text-align: center;
+
+}
+
+
+.select_type_container .span5{
+
+  height: 400px;
+  padding-top: 60px;
+  border-radius: 15px;
+
+
+}
+
+.select_type_container .span5:hover{
+
+  background-color: #cdeb8e;
+  text-decoration: none;
+  color: gray;
+
+}
+
+.select_type_container .span5 a:visited{
+  color: gray !important;
+}
+
+
+.center-form {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.green{
+
+  color:#cdeb8e;
+
+}
+
+form .help-inline{
+
+  display: block !important;
+
+}
+
+
+
+/*.vertical-line{
+
+  position:relative;
+  width: 1px;
+  height: 400px;
+  float:right;
+  background-color: black;
+
+
+}
+*/

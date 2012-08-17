@@ -22,7 +22,53 @@
     %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
 
   %body
+    
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand
+            %h2.csfont3.white
+              TC.COM
+
+             
+
+          %ul.nav.pull-right
+          
+
+            -if user_signed_in?
+              %li
+                %a
+                  =current_user.name
+
+
+              %li
+                %a
+                  =button_to 'Cerrar Sesion', {action: 'destroy', :controller => 'devise/sessions'},{:form => {:class => 'session'}, :method => 'delete', :class => 'btn'}       
+            -else
+
+              %li
+                !="<a href= #{new_user_session_path}>"
+                %button.btn
+                  Ingresar
+                !="</a>"  
+
+              %li
+                !="<a href= #{select_user_type_path}>"
+                %button.btn
+                  Registrarse    
+                !="</a>"                  
+
     .container
+      
+      -if notice
+        .alert.alert-info.notice-modif
+          %p.notice.csfont3
+            =notice
+      -if alert      
+        .alert.alert-modif
+          %p.alert.csfont3
+            =alert    
+
       = yield
     
     

@@ -1,4 +1,7 @@
 es:
+  time:
+    formats:
+      default: "%F"
   activerecord:
     errors:
       messages:

@@ -1,0 +1,6 @@
+es:
+  user:
+    name: Nombre Completo
+    email: Correo Electronico
+    password: Contraseña
+    password_confirmation: Confirmacion Contraseña

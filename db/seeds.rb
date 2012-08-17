@@ -101,6 +101,85 @@ cl.save
 
 ##Futbol Clubs
 
+## Fairplay - Real
+
+cl = Club.new;
+cl.name = 'Fairplay Futbol 5'
+cl.address = 'Rivadavia 1240'
+cl.department_id = Department.find_by_name('godoy cruz').id 
+cl.phone_number = 4222411
+cl.futbol_quantity = 0
+cl.coords = "-32.9237234,-68.8537733"
+
+cl.save
+
+
+## Arenales - Real
+
+cl = Club.new;
+cl.name = 'Arenales Futbol 5'
+cl.address = 'Acceso Este 4157'
+cl.department_id = Department.find_by_name('guaymallen').id 
+cl.phone_number = 4218345
+cl.futbol_quantity = 0
+cl.coords = "-33.1961632,-68.2187500"
+
+cl.save
+
+## Chapini Amanda - Real
+
+cl = Club.new;
+cl.name = 'Chapini Amanda'
+cl.address = 'Remedios de Escalada 3560'
+cl.department_id = Department.find_by_name('godoy cruz').id 
+cl.phone_number =  4322614
+cl.futbol_quantity = 0  
+cl.coords = "-32.9248224,-68.8370797"
+
+cl.save
+
+
+## Independencia Futbol
+
+cl = Club.new
+cl.name = 'Independencia Futbol'
+cl.address = 'Independencia 310'
+cl.department_id = Department.find_by_name('godoy cruz').id 
+cl.phone_number = 153681421
+cl.futbol_quantity = 1
+cl.coords = "-32.9318427,-68.8238145"
+
+if File.exists?('pictures/fut-img1.jpg')
+   cl.pictures.build picture: File.new('pictures/fut-img1.jpg')
+else
+   puts 'cant find club image for club ' + cl.name
+end
+
+cl.save
+
+
+
+## Independencia Futbol
+
+cl = Club.new
+cl.name = 'Independencia Futbol'
+cl.address = 'Independencia 310'
+cl.department_id = Department.find_by_name('godoy cruz').id 
+cl.phone_number = 153681421
+cl.futbol_quantity = 1
+cl.coords = "-32.9318427,-68.8238145"
+
+if File.exists?('pictures/fut-img1.jpg')
+   cl.pictures.build picture: File.new('pictures/fut-img1.jpg')
+else
+   puts 'cant find club image for club ' + cl.name
+end
+
+cl.save
+
+
+
+
 ## 6 - Futbol 5 las Tortugas 
 
 cl = Club.new;
@@ -140,23 +219,6 @@ end
 cl.save
 
 
-## 8 - Independencia Futbol
-
-cl = Club.new
-cl.name = 'Independencia Futbol'
-cl.address = 'Independencia 310'
-cl.department_id = Department.find_by_name('maipu').id 
-cl.phone_number = 153681421
-cl.futbol_quantity = 1
-cl.coords = "-32.89776620,-68.86353819999999"
-
-if File.exists?('pictures/fut-img1.jpg')
-   cl.pictures.build picture: File.new('pictures/fut-img1.jpg')
-else
-   puts 'cant find club image for club ' + cl.name
-end
-
-cl.save
 
 
 
