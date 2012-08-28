@@ -1,0 +1,21 @@
+es:
+  time:
+    formats:
+      default: "%F"
+  activerecord:
+    errors:
+      messages:
+          taken: "Ya es utilizado"
+          record_invalid: "Fallo la validacion: %{errors}"
+      models: 
+        user:
+          attributes:
+            name:
+              blank: 'Debe indicar el nombre de usuario'
+            email:
+              blank: 'Debe indicar el correo electronico'
+            password:
+              confirmation: 'Error en confirmacion de contraseña '
+              blank: 'Debe indicar la contraseña'  
+
+
