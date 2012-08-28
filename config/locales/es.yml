@@ -1,4 +1,7 @@
 es:
+  support:
+    array:
+      words_connector: ','
   time:
     formats:
       default: "%F"

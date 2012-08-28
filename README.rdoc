@@ -3,14 +3,9 @@
 Example site for searching Futbol, Padel & Tenis Clubs in Mendoza, Argentina
 
 
-== 17/08 tried to quick merge some changes and messed up master branch
-   i will fix this asap, meanwhile a 'stable' version is in add_devise branch
-   make sure to checkout that branch!
-
 == Get it working
 
 1. git clone git://github.com/FabricioPavano/portfolio-project.git
-2. git checkout add_devise 
 3. bundle --without development
 4. rake db:migrate 
 5. rake db:seed (important!)
@@ -19,10 +14,6 @@ Example site for searching Futbol, Padel & Tenis Clubs in Mendoza, Argentina
 
 you can access backend functionality through /admin url
 
-
-
-
-*note*: this is a feature-reduced version of the real project hosted on a private repo in bitbucket.
 
 
 enjoy!
