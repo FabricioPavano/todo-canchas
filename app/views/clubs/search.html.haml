@@ -1,33 +1,54 @@
+%script{'src'=> "http://maps.googleapis.com/maps/api/js?sensor=false"}
+=content_for :javascript_includes do
+  =javascript_include_tag '/assets/optional/google.util.maps.js'
+  =javascript_include_tag '/assets/optional/google.root.map.js'
+
+.row.two-columns-row
+  .span7.inner-span
+    .span7
+      .hero-unit.extra-touch.csfont3 
+        %h1
+          Todo /// | \\\ Canchas.com
+        %p
+          El directorio de canchas de Futbol, Tenis y Paddle de Mendoza
+    
+    .row
+      .span7
+        = form_tag(clubs_path, :method => 'get', :class => 'brown-well form-search') do
+          %input.input-large{type: 'text', name: 'search-value'}
+          %button.btn{type: 'submit'}
+            Buscar
+      
+    
+    .span7.search-info
+      .row
+        .inner-div
+          .div-icon.green-color
+            %i.icon-globe.icon-size
+          .div-text-icon.csfont3.green-color
+            1.Busca una cancha
+        .inner-div
+          .div-icon.green-color
+            %i.icon-search.icon-size
+          .div-text-icon.csfont3.green-color
+            2.Encuentra un turno
+        .inner-div
+          .div-icon.green-color
+            %i.icon-money.icon-size
+          .div-text-icon.csfont3.green-color
+            3.Alquila!    
+    
+
+    / .span7
+    /   = form_tag(clubs_path, :method => 'get', :class => 'brown-well form-search') do
+    /     %input.input-large{type: 'text', name: 'search-value'}
+    /     %button.btn{type: 'submit'}
+    /       Buscar
+
+    
+  .span5.inner-span#root-map-canvas
 
 
-.row
-  .span9
-    .hero-unit.extra-touch.csfont3 
-      %h1
-        Todo Canchas.com
-      %p
-        El directorio de canchas de Futbol, Tenis y Paddle de Mendoza   
 
 
-    = form_tag(clubs_path, :method => 'get', :class => 'brown-well form-search') do
-      %input.input-medium.search-query{type: 'text', name: 'search-value'}
-      %button.btn{type: 'submit'}
-        Buscar
 
-    %br     
-    %span.csfont3.search-help
-      Puedes buscar por departamento, deporte o nombre de club 
-      %br
-
-    %span.csfont3.search-help 
-      ||| Ejemplos: 
-      %hr
-      %ul.csfont2
-        %li.black-examples
-          Mendoza,
-        %li.black-examples
-          Paddle,
-        %li.black-examples
-          Futbol 5 Maipu,
-        %li.black-examples
-          Regatas  
