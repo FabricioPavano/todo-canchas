@@ -6,7 +6,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'pg'
+gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "jquery-fileupload-rails"
@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'devise'
+gem 'sqlite3'
 
 
 
@@ -45,8 +46,7 @@ group :test do
 end
 
 group :development do
-  #solo para el rodri :)
-  gem 'sqlite3' if File.open('config/database.yml').read.include? "sqlite3"
+  gem 'sqlite3' 
   gem 'gem-open'
   gem 'hirb'
   gem 'hpricot'
