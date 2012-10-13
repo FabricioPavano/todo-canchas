@@ -16,7 +16,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'devise'
-gem 'sqlite3'
+
 
 
 # Gems used only for assets and not required
