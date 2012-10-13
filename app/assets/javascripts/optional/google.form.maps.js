@@ -29,9 +29,6 @@
         if (typeof dbCoords == 'undefined')
           dbCoords = $('input#coords').val();
 
-
-
-
         if ( dbCoords != '' && dbCoords != undefined){
            var location = buildLatLng(dbCoords)
            markClubLocation(location)

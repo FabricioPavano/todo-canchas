@@ -26,7 +26,7 @@ cl.address = 'Avenida Boulogne Sur Mer 1230'
 cl.department_id = Department.find_by_name('mendoza').id 
 cl.phone_number = 4380124
 cl.tenis_quantity = 6
-cl.coords = "-32.89776620,-68.86353819999999"
+cl.coords = '-32.885216,-68.86097'
 
 
 if File.exists?('pictures/ten-img1.jpg')
@@ -271,7 +271,7 @@ cl.address = 'Quintana 235'
 cl.department_id = Department.find_by_name('godoy cruz').id 
 cl.phone_number = 4243907
 cl.paddle_quantity = 4
-cl.coords = "-32.89776620,-68.86353819999999"
+cl.coords = '-32.901573,-68.7866'
 
 if File.exists?('pictures/pad-img1.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img1.jpg')
@@ -291,7 +291,7 @@ cl.address = 'C W Lencinas 333'
 cl.department_id = Department.find_by_name('mendoza').id 
 cl.phone_number = 4297141
 cl.paddle_quantity = 4
-cl.coords = "-32.89776620,-68.86353819999999"
+cl.coords = "-32.881474,-68.852941"
 
 if File.exists?('pictures/pad-img2.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img2.jpg')
@@ -311,7 +311,7 @@ cl.address = 'Andrade 271'
 cl.department_id = Department.find_by_name('guaymallen').id 
 cl.phone_number = 155437972
 cl.paddle_quantity = 4
-cl.coords = "-32.89776620,-68.86353819999999"
+cl.coords = '-32.904177,-68.851654'
 
 if File.exists?('pictures/pad-img3.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img3.jpg')
@@ -332,7 +332,7 @@ cl.address = 'Dr. Moreno 1986'
 cl.department_id = Department.find_by_name('las heras').id 
 cl.phone_number = 2614484705
 cl.paddle_quantity = 4
-cl.coords = "-32.89776620,-68.86353819999999"
+cl.coords = "-32.881474,-68.852941"
 
 if File.exists?('pictures/pad-img4.jpg')
    cl.pictures.build picture: File.new('pictures/pad-img4.jpg')

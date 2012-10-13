@@ -106,9 +106,8 @@ class ClubsController < ApplicationController
   # fetches all clubs of a given department and returns them in JSON
   def fetchByDepartment
 
-    debugger
-
     dep = Department.find_by_name(params['department'])
+    
     @clubs = Club.by_department(dep)
 
     render json: @clubs

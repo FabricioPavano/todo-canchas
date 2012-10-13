@@ -18,6 +18,13 @@ $(document).ready(function(){
       map = new google.maps.Map(document.getElementById("root-map-canvas"),
           mapOptions);
 
+      markDepartmentClubs('mendoza')
+
+      infowindow = new google.maps.InfoWindow({
+        content: 'contentString'
+      });
+
+
   }
 
   initialize_root_map();

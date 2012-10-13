@@ -26,9 +26,8 @@ function markClubLocation(location) {
     markers.first().setMap(null)
     markers.shift()
   }
-  
 
-  // sets coordinates
+  // sets coordinates on hidden field
   setCoords(location)
 }
 
@@ -75,23 +74,43 @@ function buildLatLng(latlngStr) {
 
 //marks every club of a given department
 
+// marks on the map all clubs of a given department
 function markDepartmentClubs(department){
 
-  department = Department.find_by_name(department)
-
-
-}
-
-function getClubs(department){
+  // sets mendoza as default department
+  var department = typeof department !== 'undefined' ? department : 'mendoza';
   
-  $.getJSON('clubs/fetchByDepartment', {'department':department}d, function(){
-
+  
+  //fetches department clubs
+  $.getJSON('clubs/fetchByDepartment', {'department':department}, function(clubs){
+    
     
 
-    
+    //we mark each one individually
+    $.each(clubs,function(index,club){
+
+      var location = buildLatLng(club.coords);
+
+      // adds marker
+      var marker = new google.maps.Marker({
+         position: location,
+         map: map
+      });
+
+      var infowindow = new google.maps.InfoWindow({
+          content: 'probando'
+      });
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+      });
+
+    })
+
   })
 
 }
+
 
 
 

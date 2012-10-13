@@ -19,8 +19,6 @@ gem 'devise'
 gem 'sqlite3'
 
 
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -51,6 +49,7 @@ group :development do
   gem 'hirb'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'debugger'
 end
 
 # To use ActiveModel has_secure_password
@@ -65,5 +64,4 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'2
 
-# To use debugger
-gem 'debugger'
+
