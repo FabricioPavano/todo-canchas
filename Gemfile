@@ -16,6 +16,10 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'devise'
+gem 'hpricot'
+gem 'ruby_parser'
+  gem "bootstrap-sass-rails"
+  gem 'twitter-bootstrap-rails'
 
 
 
@@ -24,13 +28,9 @@ gem 'devise'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem "bootstrap-sass-rails"
-  gem 'twitter-bootstrap-rails'
-  gem 'font-awesome-rails'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
- 
 
+  gem 'font-awesome-rails'
+  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -47,8 +47,6 @@ group :development do
   #gem 'sqlite3' 
   gem 'gem-open'
   gem 'hirb'
-  gem 'hpricot'
-  gem 'ruby_parser'
   gem 'debugger'
 end
 
