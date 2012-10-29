@@ -18,8 +18,8 @@ gem 'rmagick'
 gem 'devise'
 gem 'hpricot'
 gem 'ruby_parser'
-  gem "bootstrap-sass-rails"
-  gem 'twitter-bootstrap-rails'
+gem "bootstrap-sass-rails"
+gem 'twitter-bootstrap-rails'
 
 
 
@@ -44,7 +44,6 @@ group :test do
 end
 
 group :development do
-  #gem 'sqlite3' 
   gem 'gem-open'
   gem 'hirb'
   gem 'debugger'
