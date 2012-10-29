@@ -20,7 +20,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 gem "bootstrap-sass-rails"
 gem 'twitter-bootstrap-rails'
-
+gem 'font-awesome-rails'
 
 
 # Gems used only for assets and not required
@@ -28,8 +28,6 @@ gem 'twitter-bootstrap-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  gem 'font-awesome-rails'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
